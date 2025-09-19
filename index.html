@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angular Junior Practice Exam – 2025</title>
+<style>
+  :root {
+    --primary:#007bff;
+    --primary-dark:#0056b3;
+    --correct:#28a745;
+    --incorrect:#dc3545;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg,#74b9ff,#a29bfe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  h1 { text-align: center; }
+  .hidden { display: none; }
+
+  /* ===== Pantalla de inicio ===== */
+  #startScreen {
+    max-width: 700px;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  #startScreen h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #007bff, #6a11cb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #startScreen p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+  }
+  #startScreen ul {
+    text-align: left;
+    margin: 0 auto 25px;
+    max-width: 500px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 20px;
+  }
+  #startScreen button {
+    background: var(--primary);
+    color: #fff;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  #startScreen button:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* ===== Preguntas ===== */
+  .question {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .question label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 10px;
+    margin: 6px 0;
+    cursor: pointer;
+    line-height: 1.4;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fdfdfd;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .question label input { margin-top: 2px; }
+
+  .correct { color: var(--correct); font-weight: bold; }
+  .incorrect { color: var(--incorrect); font-weight: bold; }
+
+  .explanation {
+    margin-top: 6px;
+    font-style: italic;
+    color: var(--correct);
+  }
+
+  /* ===== Controles ===== */
+  #controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #controls button {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    min-width: 120px;
+    max-width: 100%;
+    flex: 1 1 auto;
+    white-space: normal;
+  }
+  #controls button:hover { background: var(--primary-dark); }
+
+  #timer {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--incorrect);
+  }
+
+  /* ===== Pantalla de resultados ===== */
+  #resultScreen {
+    max-width: 900px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease-out;
+  }
+  #resultScreen h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-top: 0;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+  }
+  #resultScreen .score {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin: 20px 0;
+  }
+  #resultScreen .level-scores p {
+    margin: 4px 0;
+  }
+  #resultScreen .wrong-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  #resultScreen .wrong-item {
+    margin-bottom: 18px;
+    background: #f8f9fa;
+    border-left: 6px solid var(--incorrect);
+    padding: 12px 14px;
+    border-radius: 6px;
+  }
+  #resultScreen .wrong-item h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: #333;
+  }
+  #resultScreen .your-answer { color: var(--incorrect); margin: 0; }
+  #resultScreen .correct-answer { color: var(--correct); margin: 0; }
+
+  .level {
+    font-size: 0.9em;
+    font-weight: bold;
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    display: inline-block;
+  }
+  .level.basic { color: var(--correct); }
+  .level.intermediate { color: #ffc107; }
+  .level.advanced { color: var(--incorrect); }
+
+  @media (max-width: 768px) {
+    body { padding: 12px; font-size: 16px; }
+    h1 { font-size: 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    body { padding: 8px; font-size: 15px; }
+    h1 { font-size: 1.3rem; }
+    .question { padding: 10px; }
+    #controls { flex-direction: column; gap: 10px; align-items: stretch; }
+    #controls button { width: 100%; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Pantalla de inicio -->
+<div id="startScreen">
+  <h1>Angular Junior Practice Exam – 2025</h1>
+  <p>
+    Bienvenido al <strong>Simulador Oficial</strong> para la certificación Angular 2025.
+    Pon a prueba tus conocimientos de <strong>Angular 17+</strong>, RxJS 7+, TypeScript
+    y las últimas prácticas recomendadas.
+  </p>
+  <ul>
+    <li>⏱ <strong>Duración:</strong> 40 minutos</li>
+    <li>📝 <strong>Preguntas:</strong> 50 aleatorias de un gran banco</li>
+    <li>📊 <strong>Resultados:</strong> puntuación total y por nivel</li>
+  </ul>
+  <button onclick="startExam()">🚀 Comenzar Examen</button>
+</div>
+
+<!-- Pantalla del examen -->
+<div id="quizScreen" class="hidden">
+  <h1>Angular Junior Practice Exam – 2025</h1>
+  <div id="timer">Time Remaining: 40:00</div>
+  <form id="quizForm"></form>
+  <div id="controls">
+    <button type="button" id="prevBtn" onclick="prevPage()">Prev</button>
+    <button type="button" id="nextBtn" onclick="nextPage()">Next</button>
+  </div>
+</div>
+
+<!-- Pantalla de resultados -->
+<div id="resultScreen" class="hidden">
+  <div id="resultContent"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
