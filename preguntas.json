@@ -1,11 +1,861 @@
 [
   {
-    "q": "Which file typically bootstraps a standalone Angular 17 application?",
+    "q": "What is Angular?",
+    "options": [
+      {
+        "text": "A TypeScript-based framework for building web applications",
+        "correct": true,
+        "exp": "Angular es un framework basado en TypeScript para crear aplicaciones web SPA."
+      },
+      {
+        "text": "A CSS library",
+        "correct": false
+      },
+      {
+        "text": "A database management system",
+        "correct": false
+      },
+      {
+        "text": "A backend server framework",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which command is used to create a new Angular project?",
+    "options": [
+      {
+        "text": "ng new myProject",
+        "correct": true,
+        "exp": "El comando estándar para iniciar un proyecto Angular es `ng new`."
+      },
+      {
+        "text": "ng create project myProject",
+        "correct": false
+      },
+      {
+        "text": "npm init ng myProject",
+        "correct": false
+      },
+      {
+        "text": "ng generate app myProject",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which file typically defines the root module of an Angular app?",
+    "options": [
+      {
+        "text": "app.module.ts",
+        "correct": true,
+        "exp": "`AppModule` es el módulo raíz donde se bootstrap la aplicación."
+      },
+      {
+        "text": "main.ts",
+        "correct": false
+      },
+      {
+        "text": "index.html",
+        "correct": false
+      },
+      {
+        "text": "styles.css",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "What is the main difference between Angular and AngularJS?",
+    "options": [
+      {
+        "text": "Angular is TypeScript-based, AngularJS is JavaScript-based",
+        "correct": true,
+        "exp": "Angular moderno está escrito en TypeScript, AngularJS en JavaScript."
+      },
+      {
+        "text": "AngularJS supports components and Angular does not",
+        "correct": false
+      },
+      {
+        "text": "Angular does not support data binding",
+        "correct": false
+      },
+      {
+        "text": "AngularJS uses TypeScript by default",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which decorator is used to define a component?",
+    "options": [
+      {
+        "text": "@Component",
+        "correct": true,
+        "exp": "El decorador @Component define metadatos de un componente Angular."
+      },
+      {
+        "text": "@Injectable",
+        "correct": false
+      },
+      {
+        "text": "@NgModule",
+        "correct": false
+      },
+      {
+        "text": "@Directive",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which property in @Component defines the element name used in HTML?",
+    "options": [
+      {
+        "text": "selector",
+        "correct": true,
+        "exp": "El selector es el tag HTML del componente."
+      },
+      {
+        "text": "templateUrl",
+        "correct": false
+      },
+      {
+        "text": "styleUrls",
+        "correct": false
+      },
+      {
+        "text": "providers",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which binding uses `[( )]` syntax?",
+    "options": [
+      {
+        "text": "Two-way data binding",
+        "correct": true,
+        "exp": "La combinación banana in a box `[(ngModel)]` representa two-way binding."
+      },
+      {
+        "text": "Event binding",
+        "correct": false
+      },
+      {
+        "text": "Property binding",
+        "correct": false
+      },
+      {
+        "text": "Interpolation",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which decorator is used to receive data from a parent component?",
+    "options": [
+      {
+        "text": "@Input",
+        "correct": true,
+        "exp": "@Input permite recibir datos desde el componente padre."
+      },
+      {
+        "text": "@Output",
+        "correct": false
+      },
+      {
+        "text": "@Injectable",
+        "correct": false
+      },
+      {
+        "text": "@Signal",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which decorator is used to emit events to a parent component?",
+    "options": [
+      {
+        "text": "@Output",
+        "correct": true,
+        "exp": "@Output se usa para emitir eventos al componente padre."
+      },
+      {
+        "text": "@Input",
+        "correct": false
+      },
+      {
+        "text": "@Emit",
+        "correct": false
+      },
+      {
+        "text": "@Component",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "What does interpolation use in Angular templates?",
+    "options": [
+      {
+        "text": "{{ }}",
+        "correct": true,
+        "exp": "La interpolación usa llaves dobles para mostrar valores."
+      },
+      {
+        "text": "[ ]",
+        "correct": false
+      },
+      {
+        "text": "( )",
+        "correct": false
+      },
+      {
+        "text": "[( )]",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "How do you create a signal?",
+    "options": [
+      {
+        "text": "const count = signal(0)",
+        "correct": true,
+        "exp": "signal() crea un signal con un valor inicial."
+      },
+      {
+        "text": "const count = new Signal(0)",
+        "correct": false
+      },
+      {
+        "text": "signals.create(0)",
+        "correct": false
+      },
+      {
+        "text": "createSignal(0)",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+  {
+    "q": "Which method changes a signal's value?",
+    "options": [
+      {
+        "text": "set()",
+        "correct": true,
+        "exp": "signal.set(newValue) modifica su valor."
+      },
+      {
+        "text": "updateValue()",
+        "correct": false
+      },
+      {
+        "text": "refresh()",
+        "correct": false
+      },
+      {
+        "text": "emit()",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+  {
+    "q": "What language is Angular mainly written in?",
+    "options": [
+      {
+        "text": "TypeScript",
+        "correct": true,
+        "exp": "Angular se basa en TypeScript."
+      },
+      {
+        "text": "Java",
+        "correct": false
+      },
+      {
+        "text": "Python",
+        "correct": false
+      },
+      {
+        "text": "C#",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which keyword declares a variable with block scope in TypeScript?",
+    "options": [
+      {
+        "text": "let",
+        "correct": true,
+        "exp": "let permite alcance por bloque."
+      },
+      {
+        "text": "var",
+        "correct": false
+      },
+      {
+        "text": "const",
+        "correct": false
+      },
+      {
+        "text": "block",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which decorator marks a class as available for dependency injection?",
+    "options": [
+      {
+        "text": "@Injectable",
+        "correct": true,
+        "exp": "@Injectable indica que la clase puede ser inyectada como servicio."
+      },
+      {
+        "text": "@Input",
+        "correct": false
+      },
+      {
+        "text": "@Component",
+        "correct": false
+      },
+      {
+        "text": "@Pipe",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "How do you inject a service into a component?",
+    "options": [
+      {
+        "text": "In the component constructor",
+        "correct": true,
+        "exp": "Angular inyecta servicios mediante el constructor."
+      },
+      {
+        "text": "By calling useService()",
+        "correct": false
+      },
+      {
+        "text": "Using an import in the template",
+        "correct": false
+      },
+      {
+        "text": "It happens automatically without setup",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "What type of directive changes layout by adding/removing elements?",
+    "options": [
+      {
+        "text": "Structural directive",
+        "correct": true,
+        "exp": "Las directivas estructurales modifican el DOM."
+      },
+      {
+        "text": "Attribute directive",
+        "correct": false
+      },
+      {
+        "text": "Pipe directive",
+        "correct": false
+      },
+      {
+        "text": "Service directive",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which directive is used to conditionally display elements?",
+    "options": [
+      {
+        "text": "*ngIf",
+        "correct": true,
+        "exp": "ngIf muestra u oculta un elemento dependiendo de la condición."
+      },
+      {
+        "text": "*ngFor",
+        "correct": false
+      },
+      {
+        "text": "[ngClass]",
+        "correct": false
+      },
+      {
+        "text": "[hidden]",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which directive is used to iterate over a collection?",
+    "options": [
+      {
+        "text": "*ngFor",
+        "correct": true,
+        "exp": "ngFor repite un elemento basado en una colección."
+      },
+      {
+        "text": "*ngIf",
+        "correct": false
+      },
+      {
+        "text": "[ngStyle]",
+        "correct": false
+      },
+      {
+        "text": "[(ngModel)]",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which component displays routed views?",
+    "options": [
+      {
+        "text": "<router-outlet>",
+        "correct": true,
+        "exp": "router-outlet es el punto donde se carga la vista del router."
+      },
+      {
+        "text": "<router-view>",
+        "correct": false
+      },
+      {
+        "text": "<route-display>",
+        "correct": false
+      },
+      {
+        "text": "<ng-view>",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which directive is used for navigation in templates?",
+    "options": [
+      {
+        "text": "[routerLink]",
+        "correct": true,
+        "exp": "routerLink genera enlaces manejados por el router."
+      },
+      {
+        "text": "*ngIf",
+        "correct": false
+      },
+      {
+        "text": "[href]",
+        "correct": false
+      },
+      {
+        "text": "navigate()",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which feature protects routes based on conditions?",
+    "options": [
+      {
+        "text": "Route Guards",
+        "correct": true,
+        "exp": "Los guards restringen acceso a rutas basado en lógica."
+      },
+      {
+        "text": "Resolvers",
+        "correct": false
+      },
+      {
+        "text": "Pipes",
+        "correct": false
+      },
+      {
+        "text": "Services",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which pipe formats dates?",
+    "options": [
+      {
+        "text": "date",
+        "correct": true,
+        "exp": "El pipe date transforma valores a formato fecha."
+      },
+      {
+        "text": "uppercase",
+        "correct": false
+      },
+      {
+        "text": "json",
+        "correct": false
+      },
+      {
+        "text": "async",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which pipe transforms text to uppercase?",
+    "options": [
+      {
+        "text": "uppercase",
+        "correct": true,
+        "exp": "uppercase convierte texto a mayúsculas."
+      },
+      {
+        "text": "lowercase",
+        "correct": false
+      },
+      {
+        "text": "titlecase",
+        "correct": false
+      },
+      {
+        "text": "slice",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which syntax applies parameters to a pipe?",
+    "options": [
+      {
+        "text": "{{ value | date:'short' }}",
+        "correct": true,
+        "exp": "Los parámetros se pasan después del nombre del pipe separados por ':'"
+      },
+      {
+        "text": "{{ value | date(short) }}",
+        "correct": false
+      },
+      {
+        "text": "{{ date(value, short) }}",
+        "correct": false
+      },
+      {
+        "text": "{{ value:short|date }}",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "What is the key difference between template-driven and reactive forms?",
+    "options": [
+      {
+        "text": "Reactive forms are more scalable and use explicit form models",
+        "correct": true,
+        "exp": "Reactive forms se basan en un modelo creado en TS, son más robustas."
+      },
+      {
+        "text": "Template-driven forms do not support validation",
+        "correct": false
+      },
+      {
+        "text": "Reactive forms do not use HTML templates",
+        "correct": false
+      },
+      {
+        "text": "Template-driven forms are only for small apps",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which class represents a control in Angular forms?",
+    "options": [
+      {
+        "text": "AbstractControl",
+        "correct": true,
+        "exp": "AbstractControl es la clase base para FormControl y FormGroup."
+      },
+      {
+        "text": "NgForm",
+        "correct": false
+      },
+      {
+        "text": "FormInput",
+        "correct": false
+      },
+      {
+        "text": "ControlBase",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which CSS class indicates a valid form control?",
+    "options": [
+      {
+        "text": "ng-valid",
+        "correct": true,
+        "exp": "Angular aplica ng-valid si el control es válido."
+      },
+      {
+        "text": "ng-correct",
+        "correct": false
+      },
+      {
+        "text": "ng-form-valid",
+        "correct": false
+      },
+      {
+        "text": "form-valid",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which CSS class indicates a touched form control?",
+    "options": [
+      {
+        "text": "ng-touched",
+        "correct": true,
+        "exp": "ng-touched indica que el control ha sido enfocado y luego desenfocado."
+      },
+      {
+        "text": "ng-visited",
+        "correct": false
+      },
+      {
+        "text": "ng-marked",
+        "correct": false
+      },
+      {
+        "text": "ng-met",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which property of @NgModule declares which components belong to the module?",
+    "options": [
+      {
+        "text": "declarations",
+        "correct": true,
+        "exp": "declarations lista los componentes, pipes y directivas del módulo."
+      },
+      {
+        "text": "imports",
+        "correct": false
+      },
+      {
+        "text": "providers",
+        "correct": false
+      },
+      {
+        "text": "bootstrap",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which property of @NgModule lists other modules needed?",
+    "options": [
+      {
+        "text": "imports",
+        "correct": true,
+        "exp": "imports indica los módulos externos necesarios en el módulo."
+      },
+      {
+        "text": "declarations",
+        "correct": false
+      },
+      {
+        "text": "providers",
+        "correct": false
+      },
+      {
+        "text": "exports",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which property of @NgModule makes components available to other modules?",
+    "options": [
+      {
+        "text": "exports",
+        "correct": true,
+        "exp": "exports permite usar componentes fuera del módulo actual."
+      },
+      {
+        "text": "providers",
+        "correct": false
+      },
+      {
+        "text": "import",
+        "correct": false
+      },
+      {
+        "text": "include",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which operator applies a function to each emitted value?",
+    "options": [
+      {
+        "text": "map",
+        "correct": true,
+        "exp": "map transforma los valores emitidos por un observable."
+      },
+      {
+        "text": "filter",
+        "correct": false
+      },
+      {
+        "text": "take",
+        "correct": false
+      },
+      {
+        "text": "merge",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which operator filters emissions based on a condition?",
+    "options": [
+      {
+        "text": "filter",
+        "correct": true,
+        "exp": "filter deja pasar solo los valores que cumplan la condición."
+      },
+      {
+        "text": "map",
+        "correct": false
+      },
+      {
+        "text": "reduce",
+        "correct": false
+      },
+      {
+        "text": "finalize",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which operator completes after the first emitted value?",
+    "options": [
+      {
+        "text": "take(1)",
+        "correct": true,
+        "exp": "take(1) toma solo el primer valor y completa."
+      },
+      {
+        "text": "first()",
+        "correct": false
+      },
+      {
+        "text": "map",
+        "correct": false
+      },
+      {
+        "text": "tap",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which operator allows side effects without modifying values?",
+    "options": [
+      {
+        "text": "tap",
+        "correct": true,
+        "exp": "tap permite ejecutar acciones secundarias sin modificar flujo."
+      },
+      {
+        "text": "map",
+        "correct": false
+      },
+      {
+        "text": "filter",
+        "correct": false
+      },
+      {
+        "text": "delay",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which file bootstraps the Angular application?",
     "options": [
       {
         "text": "main.ts",
         "correct": true,
-        "exp": "Es el punto de entrada que invoca bootstrapApplication()."
+        "exp": "main.ts arranca la aplicación cargando AppModule o un standalone root."
       },
       {
         "text": "app.module.ts",
@@ -20,294 +870,163 @@
         "correct": false
       }
     ],
-    "level": "advanced"
+    "level": "basic"
   },
+
   {
-    "q": "Which decorator declares a standalone component?",
+    "q": "Which binding listens to events in Angular?",
     "options": [
       {
-        "text": "@Component({standalone:true})",
+        "text": "( )",
         "correct": true,
-        "exp": "Permite declarar un componente independiente de NgModule."
+        "exp": "Los paréntesis representan event binding, ej: (click)."
       },
       {
-        "text": "@Standalone",
+        "text": "[ ]",
         "correct": false
       },
       {
-        "text": "@NgModule",
+        "text": "{{ }}",
         "correct": false
       },
       {
-        "text": "@Injectable",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "What is the primary purpose of Angular Signals (introduced v16+)?",
-    "options": [
-      {
-        "text": "Provide fine-grained reactive state tracking",
-        "correct": true,
-        "exp": "Ofrece seguimiento de estado reactivo y granular."
-      },
-      {
-        "text": "Replace Observables completely",
-        "correct": false
-      },
-      {
-        "text": "Perform server-side rendering",
-        "correct": false
-      },
-      {
-        "text": "Manage CSS variables",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "The command to create a new standalone component is:",
-    "options": [
-      {
-        "text": "ng g c myComp --standalone",
-        "correct": true,
-        "exp": "Genera un componente standalone sin necesidad de módulo."
-      },
-      {
-        "text": "ng g scomp myComp",
-        "correct": false
-      },
-      {
-        "text": "ng create standalone myComp",
-        "correct": false
-      },
-      {
-        "text": "ng g c myComp",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which RxJS function converts an Observable to a Promise in RxJS 7+?",
-    "options": [
-      {
-        "text": "firstValueFrom()",
-        "correct": true,
-        "exp": "Convierte un Observable en una Promise de forma recomendada en RxJS 7+."
-      },
-      {
-        "text": "toPromise()",
-        "correct": false
-      },
-      {
-        "text": "convertToPromise()",
-        "correct": false
-      },
-      {
-        "text": "asPromise()",
+        "text": "[( )]",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "What CLI command starts the dev server with hot reload?",
+    "q": "Which binding sets properties on a DOM element?",
     "options": [
       {
-        "text": "ng serve",
+        "text": "[ ]",
         "correct": true,
-        "exp": "Inicia el servidor de desarrollo con recarga en caliente."
+        "exp": "Los corchetes realizan property binding."
       },
       {
-        "text": "ng run",
+        "text": "( )",
         "correct": false
       },
       {
-        "text": "npm start angular",
+        "text": "{{ }}",
         "correct": false
       },
       {
-        "text": "ng build --watch",
+        "text": "[( )]",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "Angular's dependency injection creates services:",
+    "q": "What is a service used for in Angular?",
     "options": [
       {
-        "text": "Per injector hierarchy",
+        "text": "Share logic or data between components",
         "correct": true,
-        "exp": "La creación depende de la jerarquía de inyectores, permitiendo singletons por módulo."
+        "exp": "Los servicios centralizan lógica y datos compartidos."
       },
       {
-        "text": "Only once per component",
+        "text": "Render UI elements",
         "correct": false
       },
       {
-        "text": "Every time they are used",
+        "text": "Handle router navigation",
         "correct": false
       },
       {
-        "text": "Per template",
+        "text": "Create components dynamically",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "To share a singleton service across lazy-loaded modules you provide it:",
+    "q": "Which Angular CLI command generates a service?",
     "options": [
       {
-        "text": "With providedIn:\"root\"",
+        "text": "ng g s myService",
         "correct": true,
-        "exp": "`providedIn:\"root\"` hace el servicio singleton para toda la app."
+        "exp": "ng g s genera un servicio."
       },
       {
-        "text": "In each feature module",
+        "text": "ng create service myService",
         "correct": false
       },
       {
-        "text": "Inside a component constructor",
+        "text": "ng add service myService",
         "correct": false
       },
       {
-        "text": "Only in AppComponent",
+        "text": "npm generate service",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "Which operator maps each emitted value to a new Observable?",
+    "q": "What is a pipe used for?",
     "options": [
       {
-        "text": "switchMap",
+        "text": "Transform displayed data in the template",
         "correct": true,
-        "exp": "Mapea y se suscribe a un nuevo Observable cancelando el anterior."
+        "exp": "Los pipes transforman valores mostrados."
       },
       {
-        "text": "concat",
+        "text": "Trigger HTTP requests",
         "correct": false
       },
       {
-        "text": "take",
+        "text": "Create new components",
         "correct": false
       },
       {
-        "text": "tap",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What decorator is used for a custom structural directive?",
-    "options": [
-      {
-        "text": "@Directive",
-        "correct": true,
-        "exp": "Permite crear directivas personalizadas estructurales."
-      },
-      {
-        "text": "@Component",
-        "correct": false
-      },
-      {
-        "text": "@Pipe",
-        "correct": false
-      },
-      {
-        "text": "@Injectable",
+        "text": "Wrap DOM events",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "Which built-in pipe formats a date?",
+    "q": "Which of these is a built-in structural directive?",
     "options": [
       {
-        "text": "date",
+        "text": "*ngFor",
         "correct": true,
-        "exp": "El pipe `date` formatea fechas según patrones definidos."
+        "exp": "ngFor es una directiva estructural para repetir elementos."
       },
       {
-        "text": "datetime",
+        "text": "[ngClass]",
         "correct": false
       },
       {
-        "text": "formatDate",
+        "text": "[ngStyle]",
         "correct": false
       },
       {
-        "text": "time",
+        "text": "async",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "Angular router parameter syntax in path is:",
+    "q": "Which of the following is an attribute directive?",
     "options": [
       {
-        "text": "/users/:id",
+        "text": "[ngClass]",
         "correct": true,
-        "exp": "Los parámetros de ruta se indican con `:nombre`."
+        "exp": "ngClass modifica estilos sin alterar la estructura del DOM."
       },
-      {
-        "text": "/users:id",
-        "correct": false
-      },
-      {
-        "text": "/users/{id}",
-        "correct": false
-      },
-      {
-        "text": "/users[$id]",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "To navigate programmatically and replace the current history entry use:",
-    "options": [
-      {
-        "text": "this.router.navigate([\"/home\"],{replaceUrl:true})",
-        "correct": true,
-        "exp": "`replaceUrl:true` sustituye la entrada actual del historial."
-      },
-      {
-        "text": "this.router.go(\"/home\")",
-        "correct": false
-      },
-      {
-        "text": "window.location=\"/home\"",
-        "correct": false
-      },
-      {
-        "text": "router.push(\"/home\")",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What directive displays an element only when a condition is true?",
-    "options": [
       {
         "text": "*ngIf",
-        "correct": true,
-        "exp": "Renderiza el elemento solo si la condición se cumple."
-      },
-      {
-        "text": "[hidden]",
         "correct": false
       },
       {
@@ -315,298 +1034,188 @@
         "correct": false
       },
       {
-        "text": "[ngShow]",
+        "text": "router-outlet",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "How do you declare a string in TypeScript using backticks?",
+    "options": [
+      {
+        "text": "`template string`",
+        "correct": true,
+        "exp": "Los backticks permiten template strings con interpolación."
+      },
+      {
+        "text": "'template string'",
+        "correct": false
+      },
+      {
+        "text": "\"template string\"",
+        "correct": false
+      },
+      {
+        "text": "(template string)",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "Which CLI command creates a new Angular project with standalone APIs?",
+    "q": "Which class is used to group multiple form controls?",
     "options": [
       {
-        "text": "ng new myApp --standalone",
+        "text": "FormGroup",
         "correct": true,
-        "exp": "Crea un proyecto configurado para usar standalone APIs."
+        "exp": "FormGroup organiza controles como una unidad."
       },
       {
-        "text": "ng create-standalone myApp",
+        "text": "FormControl",
         "correct": false
       },
       {
-        "text": "ng new-standalone myApp",
+        "text": "NgForm",
         "correct": false
       },
       {
-        "text": "ng new myApp",
+        "text": "AbstractControl",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which one applies logic before navigating to a route?",
+    "options": [
+      {
+        "text": "canActivate guard",
+        "correct": true,
+        "exp": "canActivate determina si una ruta se puede activar."
+      },
+      {
+        "text": "async pipe",
+        "correct": false
+      },
+      {
+        "text": "ngOnInit",
+        "correct": false
+      },
+      {
+        "text": "resolve",
         "correct": false
       }
     ],
     "level": "advanced"
   },
+
   {
-    "q": "How do you mark a property as input from a parent component?",
+    "q": "Which pipe handles Observable values automatically?",
     "options": [
       {
-        "text": "@Input()",
+        "text": "async",
         "correct": true,
-        "exp": "Permite recibir datos desde el componente padre."
+        "exp": "async se suscribe y muestra el valor más reciente del observable."
       },
       {
-        "text": "@Output()",
+        "text": "json",
         "correct": false
       },
       {
-        "text": "@Inject()",
+        "text": "date",
         "correct": false
       },
       {
-        "text": "@Prop()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which lifecycle hook runs after Angular sets data-bound properties?",
-    "options": [
-      {
-        "text": "ngOnInit",
-        "correct": true,
-        "exp": "Se ejecuta después de inicializar las propiedades enlazadas."
-      },
-      {
-        "text": "constructor",
-        "correct": false
-      },
-      {
-        "text": "ngOnChanges",
-        "correct": false
-      },
-      {
-        "text": "ngAfterContentInit",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Default change-detection strategy is:",
-    "options": [
-      {
-        "text": "Default",
-        "correct": true,
-        "exp": "La estrategia por defecto revisa el árbol de componentes completo."
-      },
-      {
-        "text": "OnPush",
-        "correct": false
-      },
-      {
-        "text": "Manual",
-        "correct": false
-      },
-      {
-        "text": "Detached",
+        "text": "uppercase",
         "correct": false
       }
     ],
     "level": "intermediate"
   },
+
   {
-    "q": "To make change detection more efficient, use:",
+    "q": "Which structural directive is used to repeat elements?",
     "options": [
       {
-        "text": "ChangeDetectionStrategy.OnPush",
+        "text": "*ngFor=\"let item of items\"",
         "correct": true,
-        "exp": "Limita la detección de cambios a inputs o eventos explícitos."
+        "exp": "Sintaxis estándar de ngFor."
       },
       {
-        "text": "ChangeDetectionStrategy.Fast",
+        "text": "*ngFor=\"items in item\"",
         "correct": false
       },
       {
-        "text": "OnDemand",
+        "text": "*repeat=\"item of items\"",
         "correct": false
       },
       {
-        "text": "Optimized",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which Forms module is used for reactive forms?",
-    "options": [
-      {
-        "text": "ReactiveFormsModule",
-        "correct": true,
-        "exp": "Proporciona soporte para formularios reactivos en Angular."
-      },
-      {
-        "text": "FormsReactive",
-        "correct": false
-      },
-      {
-        "text": "FormsModule",
-        "correct": false
-      },
-      {
-        "text": "AngularForms",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Validator to ensure a minimum length of 5 chars:",
-    "options": [
-      {
-        "text": "Validators.minLength(5)",
-        "correct": true,
-        "exp": "Valida que la longitud mínima sea 5 caracteres."
-      },
-      {
-        "text": "Validators.required(5)",
-        "correct": false
-      },
-      {
-        "text": "Validators.length(5)",
-        "correct": false
-      },
-      {
-        "text": "Validators.min(5)",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "The async pipe automatically:",
-    "options": [
-      {
-        "text": "Subscribes and unsubscribes to Observables",
-        "correct": true,
-        "exp": "Gestiona automáticamente la suscripción y cancelación."
-      },
-      {
-        "text": "Creates Observables",
-        "correct": false
-      },
-      {
-        "text": "Converts Observables to arrays",
-        "correct": false
-      },
-      {
-        "text": "Debounces values",
+        "text": "*loop=\"items\"",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "What method cancels an RxJS subscription?",
+    "q": "What does Angular CLI stand for?",
     "options": [
       {
-        "text": "unsubscribe()",
+        "text": "Command Line Interface",
         "correct": true,
-        "exp": "Método estándar para cancelar la suscripción."
+        "exp": "CLI significa Command Line Interface."
       },
       {
-        "text": "cancel()",
+        "text": "Component Logic Integration",
         "correct": false
       },
       {
-        "text": "stop()",
+        "text": "Code Layout Interpreter",
         "correct": false
       },
       {
-        "text": "end()",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which testing framework ships by default with Angular CLI?",
-    "options": [
-      {
-        "text": "Jasmine",
-        "correct": true,
-        "exp": "Framework de testing incluido por defecto en Angular CLI."
-      },
-      {
-        "text": "Jest",
-        "correct": false
-      },
-      {
-        "text": "Mocha",
-        "correct": false
-      },
-      {
-        "text": "Vitest",
+        "text": "Custom Library Installer",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "Test runner default in Angular CLI is:",
+    "q": "Which command serves the Angular application locally?",
     "options": [
       {
-        "text": "Karma",
+        "text": "ng serve",
         "correct": true,
-        "exp": "Karma es el runner predeterminado para ejecutar pruebas."
+        "exp": "ng serve inicia un servidor local para probar la aplicación."
       },
       {
-        "text": "Protractor",
+        "text": "ng run local",
         "correct": false
       },
       {
-        "text": "Playwright",
+        "text": "ng host",
         "correct": false
       },
       {
-        "text": "Vitest",
+        "text": "ng test",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "To group tests in Jasmine use:",
+    "q": "What file defines global Angular project configuration?",
     "options": [
-      {
-        "text": "describe()",
-        "correct": true,
-        "exp": "Función usada para agrupar especificaciones de prueba."
-      },
-      {
-        "text": "group()",
-        "correct": false
-      },
-      {
-        "text": "suite()",
-        "correct": false
-      },
-      {
-        "text": "testGroup()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "The main TypeScript config file is:",
-    "options": [
-      {
-        "text": "tsconfig.json",
-        "correct": true,
-        "exp": "Archivo principal de configuración de TypeScript."
-      },
       {
         "text": "angular.json",
+        "correct": true,
+        "exp": "angular.json contiene configuraciones del proyecto."
+      },
+      {
+        "text": "tsconfig.json",
         "correct": false
       },
       {
@@ -618,482 +1227,114 @@
         "correct": false
       }
     ],
-    "level": "intermediate"
+    "level": "basic"
   },
   {
-    "q": "Operator that filters emissions by condition:",
+    "q": "What feature of Angular allows automatic UI updates when data changes?",
     "options": [
       {
-        "text": "filter",
+        "text": "Data binding",
         "correct": true,
-        "exp": "Emite solo valores que cumplen la condición dada."
+        "exp": "El data binding sincroniza datos y vista."
       },
       {
-        "text": "map",
+        "text": "Routing",
         "correct": false
       },
       {
-        "text": "reduce",
+        "text": "HTTP Client",
         "correct": false
       },
       {
-        "text": "scan",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "In RxJS, which operator catches errors and returns a new Observable?",
-    "options": [
-      {
-        "text": "catchError",
-        "correct": true,
-        "exp": "Intercepta errores y devuelve un nuevo Observable."
-      },
-      {
-        "text": "handleError",
-        "correct": false
-      },
-      {
-        "text": "onError",
-        "correct": false
-      },
-      {
-        "text": "tryCatch",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Standalone apps can be bootstrapped using:",
-    "options": [
-      {
-        "text": "bootstrapApplication()",
-        "correct": true,
-        "exp": "Método para iniciar apps standalone sin NgModule."
-      },
-      {
-        "text": "bootstrapModule() only",
-        "correct": false
-      },
-      {
-        "text": "platformBrowser()",
-        "correct": false
-      },
-      {
-        "text": "startStandalone()",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "The CLI flag to enable strict type checking is:",
-    "options": [
-      {
-        "text": "--strict",
-        "correct": true,
-        "exp": "Activa comprobaciones de tipo estrictas en la compilación."
-      },
-      {
-        "text": "--check",
-        "correct": false
-      },
-      {
-        "text": "--typesafe",
-        "correct": false
-      },
-      {
-        "text": "--strong",
+        "text": "Pipes",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "A feature module should export a component when:",
+    "q": "Which symbol allows event binding in a template?",
     "options": [
       {
-        "text": "It must be used in other modules",
+        "text": "( )",
         "correct": true,
-        "exp": "Solo si el componente se usa fuera del módulo."
+        "exp": "Los paréntesis representan binding de eventos."
       },
       {
-        "text": "Always",
+        "text": "[ ]",
         "correct": false
       },
       {
-        "text": "Never",
+        "text": "{{ }}",
         "correct": false
       },
       {
-        "text": "Only in root",
+        "text": "< >",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "What command builds an optimized production bundle?",
+    "q": "In Angular, what is a Signal mainly used for?",
     "options": [
       {
-        "text": "ng build --configuration production",
+        "text": "Reactive state tracking",
         "correct": true,
-        "exp": "Genera un paquete optimizado para producción."
+        "exp": "Las Signals permiten manejar estado reactivo sin Observables."
       },
       {
-        "text": "ng prod",
+        "text": "Managing routes",
         "correct": false
       },
       {
-        "text": "ng serve --prod",
+        "text": "Creating modules",
         "correct": false
       },
       {
-        "text": "ng deploy",
+        "text": "Handling CSS styling",
         "correct": false
       }
     ],
     "level": "intermediate"
   },
   {
-    "q": "Which operator is best to combine multiple Observables and emit when all complete?",
+    "q": "How do you read a signal's value?",
     "options": [
       {
-        "text": "forkJoin",
+        "text": "Call it as a function, e.g., count()",
         "correct": true,
-        "exp": "Espera a que todos los Observables completen y emite un array con sus valores finales."
+        "exp": "Los signals se leen usando llamada a función."
       },
       {
-        "text": "merge",
+        "text": "count.value",
         "correct": false
       },
       {
-        "text": "concat",
+        "text": "count.get()",
         "correct": false
       },
       {
-        "text": "combineLatest",
+        "text": "count.read()",
         "correct": false
       }
     ],
     "level": "intermediate"
   },
   {
-    "q": "For route guards implement:",
-    "options": [
-      {
-        "text": "CanActivate",
-        "correct": true,
-        "exp": "Interfaz para decidir si se permite la navegación a una ruta."
-      },
-      {
-        "text": "OnInit",
-        "correct": false
-      },
-      {
-        "text": "AfterViewInit",
-        "correct": false
-      },
-      {
-        "text": "DoCheck",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "To inject a value from environment.ts use:",
-    "options": [
-      {
-        "text": "import { environment } from ...",
-        "correct": true,
-        "exp": "Se importa directamente el objeto environment."
-      },
-      {
-        "text": "process.env",
-        "correct": false
-      },
-      {
-        "text": "ENV.fetch()",
-        "correct": false
-      },
-      {
-        "text": "window.env",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which command updates Angular dependencies safely?",
-    "options": [
-      {
-        "text": "ng update",
-        "correct": true,
-        "exp": "Actualiza dependencias Angular siguiendo reglas de compatibilidad."
-      },
-      {
-        "text": "npm upgrade angular",
-        "correct": false
-      },
-      {
-        "text": "ng upgrade",
-        "correct": false
-      },
-      {
-        "text": "ng refresh",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "RxJS operator to retry a failed HTTP request 3 times:",
-    "options": [
-      {
-        "text": "retry(3)",
-        "correct": true,
-        "exp": "Reintenta la suscripción el número de veces indicado."
-      },
-      {
-        "text": "repeat(3)",
-        "correct": false
-      },
-      {
-        "text": "tryAgain(3)",
-        "correct": false
-      },
-      {
-        "text": "replay(3)",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "In Angular 17, signals are created with:",
-    "options": [
-      {
-        "text": "signal(initialValue)",
-        "correct": true,
-        "exp": "Crea un signal con el valor inicial especificado."
-      },
-      {
-        "text": "new Signal()",
-        "correct": false
-      },
-      {
-        "text": "createSignal()",
-        "correct": false
-      },
-      {
-        "text": "BehaviorSubject()",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "To read a signal's value you call:",
-    "options": [
-      {
-        "text": "mySignal()",
-        "correct": true,
-        "exp": "Se accede al valor actual invocando el signal como función."
-      },
-      {
-        "text": "mySignal.value",
-        "correct": false
-      },
-      {
-        "text": "get(mySignal)",
-        "correct": false
-      },
-      {
-        "text": "mySignal.get()",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Directive to set CSS styles dynamically:",
-    "options": [
-      {
-        "text": "[ngStyle]",
-        "correct": true,
-        "exp": "Permite aplicar estilos de forma dinámica desde la plantilla."
-      },
-      {
-        "text": "*ngStyle",
-        "correct": false
-      },
-      {
-        "text": "[style]",
-        "correct": false
-      },
-      {
-        "text": "ng-css",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "The HttpClient method to send POST requests is:",
-    "options": [
-      {
-        "text": "post()",
-        "correct": true,
-        "exp": "Método para enviar peticiones HTTP POST."
-      },
-      {
-        "text": "send()",
-        "correct": false
-      },
-      {
-        "text": "create()",
-        "correct": false
-      },
-      {
-        "text": "push()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "For lazy loading a route you specify:",
-    "options": [
-      {
-        "text": "loadChildren",
-        "correct": true,
-        "exp": "Propiedad del router para carga diferida de módulos."
-      },
-      {
-        "text": "lazyRoute",
-        "correct": false
-      },
-      {
-        "text": "loadModule",
-        "correct": false
-      },
-      {
-        "text": "loadAsync",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Angular CLI default style sheet format is:",
-    "options": [
-      {
-        "text": "CSS",
-        "correct": true,
-        "exp": "El formato por defecto es CSS plano."
-      },
-      {
-        "text": "SCSS",
-        "correct": false
-      },
-      {
-        "text": "SASS",
-        "correct": false
-      },
-      {
-        "text": "LESS",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which lifecycle hook is best for subscribing to Observables after view init?",
-    "options": [
-      {
-        "text": "ngAfterViewInit",
-        "correct": true,
-        "exp": "Se ejecuta tras inicializar la vista, ideal para suscripciones a elementos del DOM."
-      },
-      {
-        "text": "ngOnInit",
-        "correct": false
-      },
-      {
-        "text": "constructor",
-        "correct": false
-      },
-      {
-        "text": "ngDoCheck",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "A custom pipe class must implement:",
-    "options": [
-      {
-        "text": "PipeTransform",
-        "correct": true,
-        "exp": "Interfaz obligatoria para crear pipes personalizados."
-      },
-      {
-        "text": "PipeClass",
-        "correct": false
-      },
-      {
-        "text": "TransformPipe",
-        "correct": false
-      },
-      {
-        "text": "DoTransform",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Template reference variables are declared using:",
-    "options": [
-      {
-        "text": "#variable",
-        "correct": true,
-        "exp": "Se definen en plantilla con la almohadilla (#)."
-      },
-      {
-        "text": "@variable",
-        "correct": false
-      },
-      {
-        "text": "$variable",
-        "correct": false
-      },
-      {
-        "text": "ref-variable",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What keyword declares a constant at compile time?",
+    "q": "Which TypeScript keyword creates a read-only variable?",
     "options": [
       {
         "text": "const",
         "correct": true,
-        "exp": "Define una constante evaluada en tiempo de compilación."
-      },
-      {
-        "text": "readonly",
-        "correct": false
+        "exp": "const define valores que no pueden reasignarse."
       },
       {
         "text": "static",
+        "correct": false
+      },
+      {
+        "text": "readonly",
         "correct": false
       },
       {
@@ -1104,729 +1345,442 @@
     "level": "basic"
   },
   {
-    "q": "To preload all lazy routes after app start use:",
+    "q": "Which TypeScript feature helps document types and prevent errors?",
     "options": [
       {
-        "text": "PreloadAllModules",
+        "text": "Type annotations",
         "correct": true,
-        "exp": "Estrategia de enrutamiento para precargar todos los módulos diferidos."
+        "exp": "Las anotaciones de tipos reducen errores de tiempo de ejecución."
       },
       {
-        "text": "AllRoutesPreload",
+        "text": "Pipes",
         "correct": false
       },
       {
-        "text": "PreloadLazy",
+        "text": "Decorators",
         "correct": false
       },
       {
-        "text": "FullPreload",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "The primary advantage of OnPush change detection is:",
-    "options": [
-      {
-        "text": "Improved performance by checking only when inputs change",
-        "correct": true,
-        "exp": "Reduce el coste de detección al verificar solo cuando cambian los @Input."
-      },
-      {
-        "text": "Automatic zone patching",
-        "correct": false
-      },
-      {
-        "text": "Always checks DOM every tick",
-        "correct": false
-      },
-      {
-        "text": "Ignores @Input changes",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which Angular CLI command generates a route guard implementing CanActivate by default?",
-    "options": [
-      {
-        "text": "ng g guard auth",
-        "correct": true,
-        "exp": "Genera un guard que por defecto implementa CanActivate."
-      },
-      {
-        "text": "ng g canactivate auth",
-        "correct": false
-      },
-      {
-        "text": "ng g service guard auth",
-        "correct": false
-      },
-      {
-        "text": "ng create guard auth",
+        "text": "Modules",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "How can you enable source maps only for production builds?",
+    "q": "How do you define a class in TypeScript?",
     "options": [
       {
-        "text": "Set \"sourceMap\": true in the production configuration of angular.json",
+        "text": "class MyClass { }",
         "correct": true,
-        "exp": "Permite habilitar mapas de fuente solo en producción."
+        "exp": "Sintaxis estándar para clases."
       },
       {
-        "text": "Add --source-map flag to ng serve",
+        "text": "function class MyClass() {}",
         "correct": false
       },
       {
-        "text": "Use @SourceMap() decorator",
+        "text": "new MyClass() => {}",
         "correct": false
       },
       {
-        "text": "Set devtool: 'source-map' in tsconfig.json",
+        "text": "class: MyClass {}",
         "correct": false
       }
     ],
-    "level": "intermediate"
+    "level": "basic"
   },
+
   {
-    "q": "Which operator lets you perform an action without altering the emitted value?",
+    "q": "Why are services useful in Angular?",
     "options": [
       {
-        "text": "tap",
+        "text": "To share logic or data across multiple components",
         "correct": true,
-        "exp": "Ejecuta efectos secundarios sin modificar el flujo de datos."
+        "exp": "Permiten desacoplar lógica del UI."
       },
       {
-        "text": "map",
+        "text": "To style HTML elements",
         "correct": false
       },
       {
-        "text": "finalize",
+        "text": "To generate templates automatically",
         "correct": false
       },
       {
-        "text": "filter",
+        "text": "To load routers",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "What Angular service is used for internationalization (i18n) date formatting?",
+    "q": "Where should reusable app-wide services be provided?",
     "options": [
       {
-        "text": "DatePipe with LOCALE_ID",
+        "text": "In the root injector",
         "correct": true,
-        "exp": "DatePipe utiliza el token LOCALE_ID para formatear fechas según el idioma."
+        "exp": "Se hace usando providedIn: 'root'."
       },
       {
-        "text": "IntlService",
+        "text": "In each component",
         "correct": false
       },
       {
-        "text": "FormatDateService",
+        "text": "Only in NgModule",
         "correct": false
       },
       {
-        "text": "i18nDate",
+        "text": "Inside index.html",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which directive applies conditional CSS styles?",
+    "options": [
+      {
+        "text": "[ngStyle]",
+        "correct": true,
+        "exp": "ngStyle permite aplicar estilos dinámicos."
+      },
+      {
+        "text": "*ngIf",
+        "correct": false
+      },
+      {
+        "text": "*ngFor",
+        "correct": false
+      },
+      {
+        "text": "[routerLink]",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "What is a RouterModule used for?",
+    "options": [
+      {
+        "text": "To enable navigation between views",
+        "correct": true,
+        "exp": "RouterModule permite configurar rutas y navegación."
+      },
+      {
+        "text": "Styling components",
+        "correct": false
+      },
+      {
+        "text": "Creating components dynamically",
+        "correct": false
+      },
+      {
+        "text": "Handling forms",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which syntax defines a basic route?",
+    "options": [
+      {
+        "text": "{ path: 'home', component: HomeComponent }",
+        "correct": true,
+        "exp": "Sintaxis estándar de configuración de rutas."
+      },
+      {
+        "text": "route('home', HomeComponent)",
+        "correct": false
+      },
+      {
+        "text": "<route path='home'>HomeComponent</route>",
+        "correct": false
+      },
+      {
+        "text": "path: home -> HomeComponent",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which directive binds a form control in template-driven forms?",
+    "options": [
+      {
+        "text": "ngModel",
+        "correct": true,
+        "exp": "ngModel conecta el input con el modelo del formulario."
+      },
+      {
+        "text": "formControl",
+        "correct": false
+      },
+      {
+        "text": "formInput",
+        "correct": false
+      },
+      {
+        "text": "modelBind",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Reactive forms are built primarily using:",
+    "options": [
+      {
+        "text": "FormControl and FormGroup",
+        "correct": true,
+        "exp": "Son la base de los reactive forms."
+      },
+      {
+        "text": "ngModel",
+        "correct": false
+      },
+      {
+        "text": "Input and Output",
+        "correct": false
+      },
+      {
+        "text": "NgModelGroup",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which pipe converts objects to JSON format?",
+       "options": [
+      {
+        "text": "json",
+        "correct": true,
+        "exp": "json formatea objetos para visualización."
+      },
+      {
+        "text": "async",
+        "correct": false
+      },
+      {
+        "text": "uppercase",
+        "correct": false
+      },
+      {
+        "text": "slice",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which pipe allows partial display of strings or arrays?",
+    "options": [
+      {
+        "text": "slice",
+        "correct": true,
+        "exp": "slice devuelve solo una parte del valor."
+      },
+      {
+        "text": "uppercase",
+        "correct": false
+      },
+      {
+        "text": "date",
+        "correct": false
+      },
+      {
+        "text": "titlecase",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "What does bootstrap property in NgModule define?",
+    "options": [
+      {
+        "text": "The root component to load at app startup",
+        "correct": true,
+        "exp": "bootstrap indica qué componente inicia la app."
+      },
+      {
+        "text": "Shared components across modules",
+        "correct": false
+      },
+      {
+        "text": "External dependencies",
+        "correct": false
+      },
+      {
+        "text": "Services used in the application",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which symbol is used for property binding?",
+    "options": [
+      {
+        "text": "[ ]",
+        "correct": true,
+        "exp": "[value] asigna propiedades dinámicamente."
+      },
+      {
+        "text": "( )",
+        "correct": false
+      },
+      {
+        "text": "{{ }}",
+        "correct": false
+      },
+      {
+        "text": "< >",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "What Angular feature helps build large-scale apps by splitting code?",
+    "options": [
+      {
+        "text": "Modules",
+        "correct": true,
+        "exp": "Los módulos organizan funcionalidad en bloques reutilizables."
+      },
+      {
+        "text": "Directives",
+        "correct": false
+      },
+      {
+        "text": "Decorators",
+        "correct": false
+      },
+      {
+        "text": "Pipes",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "What method of FormControl updates its value?",
+    "options": [
+      {
+        "text": "setValue()",
+        "correct": true,
+        "exp": "setValue requiere un valor completo y válido."
+      },
+      {
+        "text": "apply()",
+        "correct": false
+      },
+      {
+        "text": "insert()",
+        "correct": false
+      },
+      {
+        "text": "update()",
+        "correct": false
+      }
+    ],
+    "level": "intermediate"
+  },
+
+  {
+    "q": "Which Router Guard prevents leaving a route?",
+    "options": [
+      {
+        "text": "canDeactivate",
+        "correct": true,
+        "exp": "Determina si una ruta puede abandonarse."
+      },
+      {
+        "text": "canActivate",
+        "correct": false
+      },
+      {
+        "text": "resolve",
+        "correct": false
+      },
+      {
+        "text": "canMatch",
         "correct": false
       }
     ],
     "level": "advanced"
   },
+
   {
-    "q": "Which function allows you to convert an Observable to a Signal?",
+    "q": "Which decorator turns a TypeScript class into a pipe?",
     "options": [
       {
-        "text": "toSignal()",
+        "text": "@Pipe",
         "correct": true,
-        "exp": "Convierte un Observable en un Signal reactivo."
+        "exp": "Define un pipe personalizado."
       },
       {
-        "text": "signalFromObservable()",
+        "text": "@Component",
         "correct": false
       },
       {
-        "text": "observableToSignal()",
+        "text": "@Injectable",
         "correct": false
       },
       {
-        "text": "createSignal()",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "What is the purpose of the ng-container element?",
-    "options": [
-      {
-        "text": "Acts as a logical container without rendering an extra DOM element",
-        "correct": true,
-        "exp": "Sirve para agrupar directivas estructurales sin añadir nodos al DOM."
-      },
-      {
-        "text": "Provides change detection boundaries",
-        "correct": false
-      },
-      {
-        "text": "Wraps Shadow DOM slots",
-        "correct": false
-      },
-      {
-        "text": "Creates a comment node for debugging",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "How do you configure route-level providers in a standalone application?",
-    "options": [
-      {
-        "text": "Use the providers property in Route definition",
-        "correct": true,
-        "exp": "Cada ruta puede declarar sus propios providers en la configuración del enrutador."
-      },
-      {
-        "text": "Add to main.ts bootstrapApplication",
-        "correct": false
-      },
-      {
-        "text": "Include in AppComponent metadata",
-        "correct": false
-      },
-      {
-        "text": "Provide inside angular.json",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which built-in Angular validator ensures a control value matches a given regex?",
-    "options": [
-      {
-        "text": "Validators.pattern()",
-        "correct": true,
-        "exp": "Valida que el valor coincida con la expresión regular proporcionada."
-      },
-      {
-        "text": "Validators.regex()",
-        "correct": false
-      },
-      {
-        "text": "Validators.match()",
-        "correct": false
-      },
-      {
-        "text": "Validators.expression()",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What decorator marks a property to emit events to a parent component?",
-    "options": [
-      {
-        "text": "@Output()",
-        "correct": true,
-        "exp": "Permite emitir eventos al componente padre mediante EventEmitter."
-      },
-      {
-        "text": "@Input()",
-        "correct": false
-      },
-      {
-        "text": "@Emit()",
-        "correct": false
-      },
-      {
-        "text": "@Event()",
+        "text": "@Directive",
         "correct": false
       }
     ],
     "level": "basic"
   },
+
   {
-    "q": "Which CLI command analyzes the bundle size of a production build?",
+    "q": "Which lifecycle hook runs once after component initialization?",
     "options": [
       {
-        "text": "ng build --stats-json && npx webpack-bundle-analyzer dist/stats.json",
+        "text": "ngOnInit",
         "correct": true,
-        "exp": "Genera un archivo de estadísticas para analizar el tamaño del bundle."
+        "exp": "ngOnInit se usa para inicialización lógica."
       },
       {
-        "text": "ng analyze-bundle",
+        "text": "ngAfterViewInit",
         "correct": false
       },
       {
-        "text": "ng inspect size",
-        "correct": false
-      },
-      {
-        "text": "npm run bundle-check",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What is the purpose of Zone.js in Angular?",
-    "options": [
-      {
-        "text": "Intercepts async operations to trigger change detection",
-        "correct": true,
-        "exp": "Permite a Angular saber cuándo ejecutar la detección de cambios."
-      },
-      {
-        "text": "Provides RxJS scheduling",
-        "correct": false
-      },
-      {
-        "text": "Manages browser rendering",
-        "correct": false
-      },
-      {
-        "text": "Implements web workers",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which operator emits the last value emitted by the source observable upon completion?",
-    "options": [
-      {
-        "text": "last()",
-        "correct": true,
-        "exp": "Emite solo el último valor antes de completar."
-      },
-      {
-        "text": "takeLast()",
-        "correct": false
-      },
-      {
-        "text": "finalize()",
-        "correct": false
-      },
-      {
-        "text": "endWith()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you disable Angular's default sanitization for binding HTML?",
-    "options": [
-      {
-        "text": "Use DomSanitizer.bypassSecurityTrustHtml()",
-        "correct": true,
-        "exp": "Permite marcar HTML como seguro para su inserción."
-      },
-      {
-        "text": "Set [innerHTML.sanitize]=\"false\"",
-        "correct": false
-      },
-      {
-        "text": "Use @UnsafeHtml()",
-        "correct": false
-      },
-      {
-        "text": "No built-in way exists",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which CLI command updates Angular and RxJS to the latest compatible versions?",
-    "options": [
-      {
-        "text": "ng update @angular/core rxjs",
-        "correct": true,
-        "exp": "Actualiza dependencias principales a versiones compatibles."
-      },
-      {
-        "text": "npm upgrade angular rxjs",
-        "correct": false
-      },
-      {
-        "text": "ng upgrade core",
-        "correct": false
-      },
-      {
-        "text": "ng refresh deps",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What lifecycle hook is called after every change detection cycle?",
-    "options": [
-      {
-        "text": "ngDoCheck",
-        "correct": true,
-        "exp": "Se ejecuta tras cada ciclo de detección de cambios."
-      },
-      {
-        "text": "ngAfterViewChecked",
+        "text": "constructor",
         "correct": false
       },
       {
         "text": "ngOnChanges",
         "correct": false
-      },
-      {
-        "text": "ngAfterContentInit",
-        "correct": false
       }
     ],
     "level": "intermediate"
   },
+
   {
-    "q": "Which Angular feature enables incremental hydration for SSR apps?",
+    "q": "Which lifecycle hook runs after input values change?",
     "options": [
       {
-        "text": "Angular Hydration APIs",
+        "text": "ngOnChanges",
         "correct": true,
-        "exp": "Permite rehidratar la app renderizada en servidor de forma incremental."
-      },
-      {
-        "text": "LazyDOM",
-        "correct": false
-      },
-      {
-        "text": "ServerPreload",
-        "correct": false
-      },
-      {
-        "text": "HybridSSR",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "How do you share a signal value across multiple components?",
-    "options": [
-      {
-        "text": "Provide the signal in a shared service",
-        "correct": true,
-        "exp": "Los signals se pueden exponer desde un servicio singleton para uso global."
-      },
-      {
-        "text": "Declare it as a global variable",
-        "correct": false
-      },
-      {
-        "text": "Use EventEmitter globally",
-        "correct": false
-      },
-      {
-        "text": "Include in angular.json",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which testing utility waits for all asynchronous tasks to finish?",
-    "options": [
-      {
-        "text": "fixture.whenStable()",
-        "correct": true,
-        "exp": "Espera a que todas las tareas asíncronas concluyan antes de continuar las pruebas."
-      },
-      {
-        "text": "asyncComplete()",
-        "correct": false
-      },
-      {
-        "text": "waitForAsyncTasks()",
-        "correct": false
-      },
-      {
-        "text": "zoneStable()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What Angular token lets you configure global app initialization logic?",
-    "options": [
-      {
-        "text": "APP_INITIALIZER",
-        "correct": true,
-        "exp": "Permite ejecutar código antes de inicializar la app."
-      },
-      {
-        "text": "APP_STARTER",
-        "correct": false
-      },
-      {
-        "text": "INIT_APP",
-        "correct": false
-      },
-      {
-        "text": "BOOT_APP",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which HTTP interceptor method allows modifying outgoing requests?",
-    "options": [
-      {
-        "text": "intercept(req, next)",
-        "correct": true,
-        "exp": "Permite modificar o clonar la petición antes de enviarla."
-      },
-      {
-        "text": "handle(req)",
-        "correct": false
-      },
-      {
-        "text": "transform(req)",
-        "correct": false
-      },
-      {
-        "text": "filter(req)",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you enable standalone component dev mode performance profiling?",
-    "options": [
-      {
-        "text": "Enable Angular DevTools extension",
-        "correct": true,
-        "exp": "La extensión oficial DevTools permite perfilar standalone components."
-      },
-      {
-        "text": "Set profileStandalone:true in angular.json",
-        "correct": false
-      },
-      {
-        "text": "Use @Profile() decorator",
-        "correct": false
-      },
-      {
-        "text": "Run ng build --profile",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which RxJS operator delays emissions by a specified time?",
-    "options": [
-      {
-        "text": "delay",
-        "correct": true,
-        "exp": "Retrasa las emisiones del Observable según el tiempo indicado."
-      },
-      {
-        "text": "debounceTime",
-        "correct": false
-      },
-      {
-        "text": "timeout",
-        "correct": false
-      },
-      {
-        "text": "pause",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What is the purpose of ViewChild with static: true?",
-    "options": [
-      {
-        "text": "Access template reference before change detection",
-        "correct": true,
-        "exp": "Permite acceder al elemento en ngOnInit."
-      },
-      {
-        "text": "Keep reference immutable",
-        "correct": false
-      },
-      {
-        "text": "Enable SSR compatibility",
-        "correct": false
-      },
-      {
-        "text": "Run outside NgZone",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which Angular interface is used to implement custom async validators?",
-    "options": [
-      {
-        "text": "AsyncValidator",
-        "correct": true,
-        "exp": "Interfaz que define la lógica de validación asíncrona."
-      },
-      {
-        "text": "ValidatorFnAsync",
-        "correct": false
-      },
-      {
-        "text": "FormAsync",
-        "correct": false
-      },
-      {
-        "text": "ReactiveValidator",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which Angular API lets you dynamically create a component at runtime?",
-    "options": [
-      {
-        "text": "ViewContainerRef.createComponent()",
-        "correct": true,
-        "exp": "Permite instanciar componentes dinámicamente en tiempo de ejecución."
-      },
-      {
-        "text": "ComponentFactory.make()",
-        "correct": false
-      },
-      {
-        "text": "Renderer2.create()",
-        "correct": false
-      },
-      {
-        "text": "DynamicComponent()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which CLI command adds Angular Universal to enable server-side rendering?",
-    "options": [
-      {
-        "text": "ng add @nguniversal/express-engine",
-        "correct": true,
-        "exp": "Instala y configura Angular Universal para SSR."
-      },
-      {
-        "text": "ng add universal",
-        "correct": false
-      },
-      {
-        "text": "ng new --ssr",
-        "correct": false
-      },
-      {
-        "text": "npm install angular-ssr",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What is the purpose of the Renderer2 service?",
-    "options": [
-      {
-        "text": "Safely manipulate DOM elements",
-        "correct": true,
-        "exp": "Proporciona una API segura para interactuar con el DOM sin romper la abstracción de Angular."
-      },
-      {
-        "text": "Manage change detection",
-        "correct": false
-      },
-      {
-        "text": "Configure RxJS schedulers",
-        "correct": false
-      },
-      {
-        "text": "Perform server rendering",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which operator creates an Observable that emits sequential numbers every specified interval?",
-    "options": [
-      {
-        "text": "interval",
-        "correct": true,
-        "exp": "Emite valores numéricos de forma secuencial cada cierto tiempo."
-      },
-      {
-        "text": "timer",
-        "correct": false
-      },
-      {
-        "text": "sequence",
-        "correct": false
-      },
-      {
-        "text": "range",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How can you make a standalone component available for lazy loading?",
-    "options": [
-      {
-        "text": "Export it and use loadComponent in the router",
-        "correct": true,
-        "exp": "Angular 15+ permite lazy load de standalone components con loadComponent."
-      },
-      {
-        "text": "Wrap it in an NgModule",
-        "correct": false
-      },
-      {
-        "text": "Use provideLazyComponent()",
-        "correct": false
-      },
-      {
-        "text": "Set lazy:true in @Component",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which lifecycle hook runs once after content is projected into the component?",
-    "options": [
-      {
-        "text": "ngAfterContentInit",
-        "correct": true,
-        "exp": "Se ejecuta después de que el contenido proyectado se haya inicializado."
-      },
-      {
-        "text": "ngAfterViewInit",
-        "correct": false
+        "exp": "ngOnChanges detecta cambios en @Input."
       },
       {
         "text": "ngDoCheck",
@@ -1835,1433 +1789,515 @@
       {
         "text": "ngOnInit",
         "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What function allows you to provide HTTP interceptors in a standalone app?",
-    "options": [
-      {
-        "text": "provideHttpClient(withInterceptors([...]))",
-        "correct": true,
-        "exp": "Configura interceptores HTTP sin NgModule."
       },
       {
-        "text": "bootstrapHttpInterceptors()",
-        "correct": false
-      },
-      {
-        "text": "provideInterceptors()",
-        "correct": false
-      },
-      {
-        "text": "httpInterceptorsRoot()",
+        "text": "ngOnDestroy",
         "correct": false
       }
     ],
     "level": "advanced"
   },
+
   {
-    "q": "Which RxJS operator completes after emitting the first value?",
+    "q": "Which file loads the root component into the DOM?",
     "options": [
       {
-        "text": "first",
+        "text": "index.html",
         "correct": true,
-        "exp": "Emite el primer valor y completa el Observable."
+        "exp": "index.html contiene la etiqueta raíz donde se inyecta el app-root."
       },
       {
-        "text": "takeLast(1)",
+        "text": "main.ts",
         "correct": false
       },
       {
-        "text": "single",
+        "text": "app.module.ts",
         "correct": false
       },
       {
-        "text": "once",
+        "text": "angular.json",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Which Angular CLI command updates dependencies automatically?",
+    "options": [
+      {
+        "text": "ng update",
+        "correct": true,
+        "exp": "ng update ayuda a mantener versiones actualizadas."
+      },
+      {
+        "text": "ng upgrade",
+        "correct": false
+      },
+      {
+        "text": "ng install update",
+        "correct": false
+      },
+      {
+        "text": "ng fix",
         "correct": false
       }
     ],
     "level": "intermediate"
   },
+
   {
-    "q": "How do you specify a default value for an Angular input property?",
+    "q": "What does `standalone: true` mean when defining a component?",
     "options": [
       {
-        "text": "Assign a value in the property declaration",
+        "text": "It does not need to belong to an NgModule",
         "correct": true,
-        "exp": "Se define en la propia clase como valor inicial."
+        "exp": "Los standalone components eliminan la necesidad de módulos."
       },
       {
-        "text": "Use @Default decorator",
+        "text": "It cannot have styles",
         "correct": false
       },
       {
-        "text": "Set default in @Input options",
+        "text": "It cannot contain logic",
         "correct": false
       },
       {
-        "text": "Provide via constructor",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which Angular token is used to detect the current platform ID (browser, server)?",
-    "options": [
-      {
-        "text": "PLATFORM_ID",
-        "correct": true,
-        "exp": "Permite conocer el entorno de ejecución."
-      },
-      {
-        "text": "APP_PLATFORM",
-        "correct": false
-      },
-      {
-        "text": "RUNTIME_ENV",
-        "correct": false
-      },
-      {
-        "text": "PLATFORM_ENV",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What is the role of the asyncScheduler in RxJS?",
-    "options": [
-      {
-        "text": "Schedules tasks asynchronously using setInterval/setTimeout",
-        "correct": true,
-        "exp": "Programa la ejecución de tareas asíncronas."
-      },
-      {
-        "text": "Runs observables synchronously",
-        "correct": false
-      },
-      {
-        "text": "Creates a microtask queue",
-        "correct": false
-      },
-      {
-        "text": "Handles HTTP retries",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which CLI command generates a standalone directive?",
-    "options": [
-      {
-        "text": "ng g directive myDir --standalone",
-        "correct": true,
-        "exp": "Crea una directiva independiente de NgModule."
-      },
-      {
-        "text": "ng create directive myDir",
-        "correct": false
-      },
-      {
-        "text": "ng g sd myDir",
-        "correct": false
-      },
-      {
-        "text": "ng add directive myDir",
+        "text": "It can only use signals",
         "correct": false
       }
     ],
     "level": "advanced"
   },
+
   {
-    "q": "What decorator marks a class as a dependency-injectable service?",
+    "q": "Which syntax imports a standalone component for use?",
     "options": [
       {
-        "text": "@Injectable()",
+        "text": "imports: [MyComponent]",
         "correct": true,
-        "exp": "Indica que la clase puede ser inyectada como servicio."
+        "exp": "Los standalone se incluyen en imports del componente que los usa."
       },
       {
-        "text": "@Service()",
+        "text": "declarations: [MyComponent]",
         "correct": false
       },
       {
-        "text": "@Provider()",
+        "text": "components: [MyComponent]",
         "correct": false
       },
       {
-        "text": "@Component()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which RxJS operator emits a specified number of values in sequence?",
-    "options": [
-      {
-        "text": "range",
-        "correct": true,
-        "exp": "Emite un rango de números consecutivos."
-      },
-      {
-        "text": "interval",
-        "correct": false
-      },
-      {
-        "text": "sequence",
-        "correct": false
-      },
-      {
-        "text": "from",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you pass static data to a route in Angular?",
-    "options": [
-      {
-        "text": "Use the data property in Route configuration",
-        "correct": true,
-        "exp": "Se accede a través de ActivatedRoute.data."
-      },
-      {
-        "text": "Via queryParams only",
-        "correct": false
-      },
-      {
-        "text": "Inside component constructor",
-        "correct": false
-      },
-      {
-        "text": "Use @RouteData decorator",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which Angular token gives access to the current locale?",
-    "options": [
-      {
-        "text": "LOCALE_ID",
-        "correct": true,
-        "exp": "Se utiliza para obtener el idioma actual de la aplicación."
-      },
-      {
-        "text": "CURRENT_LANG",
-        "correct": false
-      },
-      {
-        "text": "LANG_TOKEN",
-        "correct": false
-      },
-      {
-        "text": "APP_LANG",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What does the ng-content element enable?",
-    "options": [
-      {
-        "text": "Content projection into a component",
-        "correct": true,
-        "exp": "Permite proyectar contenido hijo en un componente padre."
-      },
-      {
-        "text": "Scoped styles",
-        "correct": false
-      },
-      {
-        "text": "Dynamic routing",
-        "correct": false
-      },
-      {
-        "text": "Change detection skipping",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which operator repeats the source observable a specified number of times?",
-    "options": [
-      {
-        "text": "repeat",
-        "correct": true,
-        "exp": "Repite la secuencia de valores el número de veces indicado."
-      },
-      {
-        "text": "retry",
-        "correct": false
-      },
-      {
-        "text": "cycle",
-        "correct": false
-      },
-      {
-        "text": "again",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you provide a value for an InjectionToken?",
-    "options": [
-      {
-        "text": "Use { provide: MyToken, useValue: value } in providers",
-        "correct": true,
-        "exp": "Forma estándar de proveer un valor a un token de inyección."
-      },
-      {
-        "text": "Set token.value = x",
-        "correct": false
-      },
-      {
-        "text": "RegisterToken(MyToken, x)",
-        "correct": false
-      },
-      {
-        "text": "Assign in angular.json",
+        "text": "use: MyComponent",
         "correct": false
       }
     ],
     "level": "advanced"
   },
+
   {
-    "q": "What is the default change detection mechanism in Angular?",
+    "q": "Which operator cancels previous Observables when a new value arrives?",
     "options": [
       {
-        "text": "Zone-based change detection",
+        "text": "switchMap",
         "correct": true,
-        "exp": "Angular usa Zone.js para detectar cambios por defecto."
-      },
-      {
-        "text": "Manual polling",
-        "correct": false
-      },
-      {
-        "text": "Web Worker events",
-        "correct": false
-      },
-      {
-        "text": "MutationObserver only",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which CLI command removes an Angular service?",
-    "options": [
-      {
-        "text": "No direct command; remove files and references manually",
-        "correct": true,
-        "exp": "La CLI no tiene comando de borrado de servicios."
-      },
-      {
-        "text": "ng remove service myService",
-        "correct": false
-      },
-      {
-        "text": "ng delete s myService",
-        "correct": false
-      },
-      {
-        "text": "ng g s --delete myService",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What decorator is used to create a custom pipe?",
-    "options": [
-      {
-        "text": "@Pipe()",
-        "correct": true,
-        "exp": "Se utiliza para definir un pipe personalizado."
-      },
-      {
-        "text": "@Transform()",
-        "correct": false
-      },
-      {
-        "text": "@Filter()",
-        "correct": false
-      },
-      {
-        "text": "@Directive()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which function lets you manually trigger change detection in a component?",
-    "options": [
-      {
-        "text": "ChangeDetectorRef.detectChanges()",
-        "correct": true,
-        "exp": "Fuerza la detección de cambios manualmente."
-      },
-      {
-        "text": "ApplicationRef.refresh()",
-        "correct": false
-      },
-      {
-        "text": "NgZone.runDetect()",
-        "correct": false
-      },
-      {
-        "text": "ViewRef.update()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How can you preload specific lazy routes selectively?",
-    "options": [
-      {
-        "text": "Implement a custom PreloadingStrategy",
-        "correct": true,
-        "exp": "Permite elegir qué rutas precargar."
-      },
-      {
-        "text": "Use PreloadAllModules",
-        "correct": false
-      },
-      {
-        "text": "Set preload:true in Route",
-        "correct": false
-      },
-      {
-        "text": "Enable routerPreload flag",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which RxJS creation operator converts an array into an observable sequence?",
-    "options": [
-      {
-        "text": "from",
-        "correct": true,
-        "exp": "Emite cada elemento del array como valor del Observable."
-      },
-      {
-        "text": "ofArray",
-        "correct": false
-      },
-      {
-        "text": "arrayToObs",
-        "correct": false
-      },
-      {
-        "text": "sequenceFrom",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which Angular function lets you bootstrap multiple standalone applications on the same page?",
-    "options": [
-      {
-        "text": "bootstrapApplication() called multiple times",
-        "correct": true,
-        "exp": "Se pueden inicializar varias apps invocando bootstrapApplication en diferentes elementos raíz."
-      },
-      {
-        "text": "multiBootstrap()",
-        "correct": false
-      },
-      {
-        "text": "platformBrowserMultiple()",
-        "correct": false
-      },
-      {
-        "text": "bootstrapModuleMulti()",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "What is the purpose of the ViewEncapsulation.ShadowDom setting?",
-    "options": [
-      {
-        "text": "Uses the browser's native Shadow DOM for style isolation",
-        "correct": true,
-        "exp": "Proporciona encapsulación real de estilos utilizando Shadow DOM."
-      },
-      {
-        "text": "Applies global styles only",
-        "correct": false
-      },
-      {
-        "text": "Disables style encapsulation",
-        "correct": false
-      },
-      {
-        "text": "Forces inline CSS",
-        "correct": false
-      }
-    ],
-    "level": "advanced"
-  },
-  {
-    "q": "Which Angular service allows dynamic translation at runtime?",
-    "options": [
-      {
-        "text": "i18n with Transloco or ngx-translate",
-        "correct": true,
-        "exp": "Librerías populares como Transloco permiten traducción dinámica."
-      },
-      {
-        "text": "LOCALE_ID",
-        "correct": false
-      },
-      {
-        "text": "IntlService",
-        "correct": false
-      },
-      {
-        "text": "LanguageProvider",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which RxJS operator collects all source values and emits them as an array when complete?",
-    "options": [
-      {
-        "text": "toArray",
-        "correct": true,
-        "exp": "Acumula todos los valores emitidos y los emite como un array al completar."
-      },
-      {
-        "text": "bufferAll",
-        "correct": false
-      },
-      {
-        "text": "collect",
-        "correct": false
-      },
-      {
-        "text": "gather",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What Angular feature enables execution of code after every navigation end?",
-    "options": [
-      {
-        "text": "Router.events with NavigationEnd",
-        "correct": true,
-        "exp": "Se suscribe a eventos del router filtrando por NavigationEnd."
-      },
-      {
-        "text": "AfterRouteHook",
-        "correct": false
-      },
-      {
-        "text": "RouteFinishService",
-        "correct": false
-      },
-      {
-        "text": "RouterComplete()",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which command checks Angular code formatting and linting?",
-    "options": [
-      {
-        "text": "ng lint",
-        "correct": true,
-        "exp": "Ejecuta las reglas de ESLint configuradas para el proyecto."
-      },
-      {
-        "text": "ng check-style",
-        "correct": false
-      },
-      {
-        "text": "ng verify-code",
-        "correct": false
-      },
-      {
-        "text": "ng audit",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "What does the RxJS finalize operator do?",
-    "options": [
-      {
-        "text": "Runs a callback after completion or error",
-        "correct": true,
-        "exp": "Permite ejecutar lógica de limpieza al finalizar el Observable."
-      },
-      {
-        "text": "Stops emissions after first value",
-        "correct": false
-      },
-      {
-        "text": "Combines multiple streams",
-        "correct": false
-      },
-      {
-        "text": "Retries on error",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "How do you access query parameters in a component?",
-    "options": [
-      {
-        "text": "ActivatedRoute.queryParamMap",
-        "correct": true,
-        "exp": "Contiene un mapa de parámetros de consulta accesible como observable."
-      },
-      {
-        "text": "Router.queryParamsDirect",
-        "correct": false
-      },
-      {
-        "text": "window.location.searchParams",
-        "correct": false
-      },
-      {
-        "text": "Route.query()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which Angular mechanism lets you dynamically load external scripts?",
-    "options": [
-      {
-        "text": "Renderer2.createElement('script')",
-        "correct": true,
-        "exp": "Permite crear elementos script de forma segura."
-      },
-      {
-        "text": "DynamicLoaderService.loadJs()",
-        "correct": false
-      },
-      {
-        "text": "ScriptManager.add()",
-        "correct": false
-      },
-      {
-        "text": "AsyncModule.load()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What is the advantage of trackBy in *ngFor?",
-    "options": [
-      {
-        "text": "Optimizes DOM updates by tracking item identity",
-        "correct": true,
-        "exp": "Evita recrear elementos cuando solo cambian datos internos."
-      },
-      {
-        "text": "Preloads items",
-        "correct": false
-      },
-      {
-        "text": "Sorts data automatically",
-        "correct": false
-      },
-      {
-        "text": "Caches template rendering",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which decorator injects the parent component instance?",
-    "options": [
-      {
-        "text": "@Host()",
-        "correct": true,
-        "exp": "Permite inyectar el padre inmediato del inyector."
-      },
-      {
-        "text": "@Parent()",
-        "correct": false
-      },
-      {
-        "text": "@Ancestor()",
-        "correct": false
-      },
-      {
-        "text": "@Root()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which RxJS operator switches to a new observable and emits values only from it?",
-    "options": [
-      {
-        "text": "switchAll",
-        "correct": true,
-        "exp": "Se suscribe al último observable interno descartando los anteriores."
-      },
-      {
-        "text": "mergeAll",
-        "correct": false
-      },
-      {
-        "text": "concatAll",
-        "correct": false
-      },
-      {
-        "text": "exhaust",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How can you make a component detect changes outside Angular's zone?",
-    "options": [
-      {
-        "text": "NgZone.runOutsideAngular()",
-        "correct": true,
-        "exp": "Ejecuta código fuera de la detección de cambios para mejorar rendimiento."
-      },
-      {
-        "text": "ChangeDetectorRef.detachOutside()",
-        "correct": false
-      },
-      {
-        "text": "ZoneSkip()",
-        "correct": false
-      },
-      {
-        "text": "NoAngularZone()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which CLI command shows the Angular CLI version?",
-    "options": [
-      {
-        "text": "ng version",
-        "correct": true,
-        "exp": "Muestra la versión de Angular CLI y dependencias."
-      },
-      {
-        "text": "ng cli-version",
-        "correct": false
-      },
-      {
-        "text": "ng about",
-        "correct": false
-      },
-      {
-        "text": "ng info",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What Angular API enables detecting when the app is stable?",
-    "options": [
-      {
-        "text": "ApplicationRef.isStable",
-        "correct": true,
-        "exp": "Observable que emite cuando la app ha terminado tareas iniciales."
-      },
-      {
-        "text": "AppReady()",
-        "correct": false
-      },
-      {
-        "text": "StableZone",
-        "correct": false
-      },
-      {
-        "text": "AppComplete",
-        "correct": false
-      }
-    ],
-    "level": "intermediate"
-  },
-  {
-    "q": "Which operator emits a value after a specified delay and then completes?",
-    "options": [
-      {
-        "text": "timer",
-        "correct": true,
-        "exp": "Emite tras un retardo y luego completa."
-      },
-      {
-        "text": "delay",
-        "correct": false
-      },
-      {
-        "text": "wait",
-        "correct": false
-      },
-      {
-        "text": "pause",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How can you merge multiple HTTP GET requests and wait until all complete?",
-    "options": [
-      {
-        "text": "forkJoin",
-        "correct": true,
-        "exp": "Combina varios observables y emite cuando todos completan."
+        "exp": "switchMap descarta la suscripción anterior."
       },
       {
         "text": "mergeMap",
         "correct": false
       },
       {
-        "text": "concat",
+        "text": "concatMap",
         "correct": false
       },
       {
-        "text": "zipLatest",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which Angular directive two-way binds form inputs?",
-    "options": [
-      {
-        "text": "[(ngModel)]",
-        "correct": true,
-        "exp": "Proporciona binding bidireccional entre modelo y vista."
-      },
-      {
-        "text": "[[model]]",
-        "correct": false
-      },
-      {
-        "text": "(ngBind)",
-        "correct": false
-      },
-      {
-        "text": "ngTwoWay",
+        "text": "exhaustMap",
         "correct": false
       }
     ],
-    "level": "basic"
+    "level": "intermediate"
   },
+
   {
-    "q": "What service allows manual scrolling in a routed Angular app?",
+    "q": "Which operator queues Observables and processes them in order?",
     "options": [
       {
-        "text": "ViewportScroller",
+        "text": "concatMap",
         "correct": true,
-        "exp": "Permite controlar el scroll del viewport."
+        "exp": "concatMap asegura el orden de emisión."
       },
       {
-        "text": "ScrollService",
+        "text": "mergeMap",
         "correct": false
       },
       {
-        "text": "WindowScroll",
+        "text": "switchMap",
         "correct": false
       },
       {
-        "text": "RouterScroll",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which operator buffers emitted values until a notifier emits?",
-    "options": [
-      {
-        "text": "buffer",
-        "correct": true,
-        "exp": "Acumula valores hasta que el observable notificador emite."
-      },
-      {
-        "text": "group",
-        "correct": false
-      },
-      {
-        "text": "collectUntil",
-        "correct": false
-      },
-      {
-        "text": "hold",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you guard a route based on user roles asynchronously?",
-    "options": [
-      {
-        "text": "Use an Auth Guard returning an Observable<boolean>",
-        "correct": true,
-        "exp": "El guard puede retornar un observable que emita true/false según roles."
-      },
-      {
-        "text": "Use asyncRouter()",
-        "correct": false
-      },
-      {
-        "text": "Only with resolver",
-        "correct": false
-      },
-      {
-        "text": "RolesGuardSync",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which Angular service provides low-level APIs for animations?",
-    "options": [
-      {
-        "text": "AnimationBuilder",
-        "correct": true,
-        "exp": "Permite crear animaciones dinámicamente mediante código."
-      },
-      {
-        "text": "AnimateService",
-        "correct": false
-      },
-      {
-        "text": "MotionAPI",
-        "correct": false
-      },
-      {
-        "text": "TransitionEngine",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you lazy load standalone routes using a function?",
-    "options": [
-      {
-        "text": "loadComponent: () => import('./my.comp').then(m => m.MyComp)",
-        "correct": true,
-        "exp": "Permite cargar componentes standalone bajo demanda."
-      },
-      {
-        "text": "lazyComponent()",
-        "correct": false
-      },
-      {
-        "text": "routeLazy()",
-        "correct": false
-      },
-      {
-        "text": "componentAsync()",
+        "text": "shareReplay",
         "correct": false
       }
     ],
     "level": "advanced"
   },
+
   {
-    "q": "Which RxJS operator shares a single subscription among multiple subscribers?",
+    "q": "Which operator subscribes to all Observables simultaneously?",
     "options": [
       {
-        "text": "shareReplay",
+        "text": "mergeMap",
         "correct": true,
-        "exp": "Comparte la suscripción y reemite valores a nuevos subscriptores."
+        "exp": "mergeMap no garantiza orden; procesa paralelo."
       },
       {
-        "text": "repeat",
+        "text": "concatMap",
         "correct": false
       },
       {
-        "text": "publish",
+        "text": "switchMap",
         "correct": false
       },
       {
-        "text": "cache",
+        "text": "tap",
+        "correct": false
+      }
+    ],
+    "level": "advanced"
+  },
+
+  {
+    "q": "Which Angular CLI command generates a directive?",
+    "options": [
+      {
+        "text": "ng g d myDirective",
+        "correct": true,
+        "exp": "g d corresponde a generate directive."
+      },
+      {
+        "text": "ng new directive",
+        "correct": false
+      },
+      {
+        "text": "ng create directive",
+        "correct": false
+      },
+      {
+        "text": "ng gen dr",
+        "correct": false
+      }
+    ],
+    "level": "basic"
+  },
+
+  {
+    "q": "Attribute directives typically:",
+    "options": [
+      {
+        "text": "Change appearance or behavior of an element",
+        "correct": true,
+        "exp": "No agregan ni remueven elementos, solo alteran atributos."
+      },
+      {
+        "text": "Add or remove DOM nodes",
+        "correct": false
+      },
+      {
+        "text": "Configure routing",
+        "correct": false
+      },
+      {
+        "text": "Define app startup logic",
         "correct": false
       }
     ],
     "level": "intermediate"
   },
+
   {
-    "q": "What decorator injects data from a parent route?",
+    "q": "Which lifecycle hook is used to perform cleanup actions?",
     "options": [
       {
-        "text": "@Optional() with ActivatedRoute.parent",
+        "text": "ngOnDestroy",
         "correct": true,
-        "exp": "Permite acceder a datos de la ruta padre si existe."
+        "exp": "Se ejecuta antes de destruir el componente."
       },
       {
-        "text": "@ParentData()",
+        "text": "ngOnInit",
         "correct": false
       },
       {
-        "text": "@FromRoute()",
+        "text": "ngAfterViewInit",
         "correct": false
       },
       {
-        "text": "@Ancestor()",
+        "text": "ngDoCheck",
+        "correct": false
+      }
+    ],
+    "level": "advanced"
+  },
+
+  {
+    "q": "What does '*ngIf=\"condition\"' do?",
+    "options": [
+      {
+        "text": "Adds or removes the element from the DOM",
+        "correct": true,
+        "exp": "ngIf controla la representación en el DOM."
+      },
+      {
+        "text": "Hides the element visually only",
+        "correct": false
+      },
+      {
+        "text": "Binds condition to a style",
+        "correct": false
+      },
+      {
+        "text": "Prevents routing",
         "correct": false
       }
     ],
     "level": "basic"
   },
   {
-    "q": "Which Angular utility lets you test components with harnesses?",
+    "q": "What command updates Angular to the latest stable version?",
     "options": [
-      {
-        "text": "ComponentHarness",
-        "correct": true,
-        "exp": "Parte de Angular CDK para pruebas de componentes."
-      },
-      {
-        "text": "TestWrapper",
-        "correct": false
-      },
-      {
-        "text": "HarnessTester",
-        "correct": false
-      },
-      {
-        "text": "CdkTester",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you schedule change detection manually after an async task?",
-    "options": [
-      {
-        "text": "NgZone.run()",
-        "correct": true,
-        "exp": "Ejecuta la lógica dentro de la zona Angular para forzar la detección."
-      },
-      {
-        "text": "ChangeDetectorRef.manual()",
-        "correct": false
-      },
-      {
-        "text": "detectAsync()",
-        "correct": false
-      },
-      {
-        "text": "Zone.refresh()",
-        "correct": false
-      }
+      { "text": "ng update", "correct": true, "exp": "ng update revisa y actualiza paquetes de Angular y dependencias compatibles." },
+      { "text": "npm upgrade angular", "correct": false },
+      { "text": "ng refresh", "correct": false },
+      { "text": "ng upgrade", "correct": false }
     ],
     "level": "intermediate"
   },
   {
-    "q": "Which operator accumulates emitted values and emits each intermediate result?",
+    "q": "Which file defines global project styling?",
     "options": [
-      {
-        "text": "scan",
-        "correct": true,
-        "exp": "Acumula y emite cada estado intermedio."
-      },
-      {
-        "text": "reduce",
-        "correct": false
-      },
-      {
-        "text": "accumulate",
-        "correct": false
-      },
-      {
-        "text": "collect",
-        "correct": false
-      }
+      { "text": "styles.css", "correct": true, "exp": "styles.css se aplica globalmente a todos los componentes del proyecto." },
+      { "text": "app.component.css", "correct": false },
+      { "text": "angular.json", "correct": false },
+      { "text": "global.css", "correct": false }
     ],
     "level": "basic"
   },
   {
-    "q": "What Angular feature lets you intercept route loading to fetch data first?",
+    "q": "Which part of Angular architecture is responsible for changing data displayed in templates?",
     "options": [
-      {
-        "text": "Resolvers",
-        "correct": true,
-        "exp": "Permiten cargar datos antes de activar la ruta."
-      },
-      {
-        "text": "Guards only",
-        "correct": false
-      },
-      {
-        "text": "Preloader",
-        "correct": false
-      },
-      {
-        "text": "RouteFetch",
-        "correct": false
-      }
+      { "text": "Change Detection", "correct": true, "exp": "El change detection detecta cambios en datos y actualiza la vista automáticamente." },
+      { "text": "Router", "correct": false },
+      { "text": "Compiler", "correct": false },
+      { "text": "Injector", "correct": false }
+    ],
+    "level": "advanced"
+  },
+  {
+    "q": "What symbol is used for property binding?",
+    "options": [
+      { "text": "[]", "correct": true, "exp": "[] se usa para enlazar atributos del DOM o inputs de componentes." },
+      { "text": "()", "correct": false },
+      { "text": "{{ }}", "correct": false },
+      { "text": "[()]", "correct": false }
     ],
     "level": "basic"
   },
   {
-    "q": "Which command creates a production build with source maps?",
+    "q": "Two-way data binding in Angular uses:",
     "options": [
-      {
-        "text": "ng build --configuration production --source-map",
-        "correct": true,
-        "exp": "Genera un bundle optimizado con mapas de fuente."
-      },
-      {
-        "text": "ng build --prodMap",
-        "correct": false
-      },
-      {
-        "text": "ng prod --maps",
-        "correct": false
-      },
-      {
-        "text": "ng build --debug",
-        "correct": false
-      }
+      { "text": "[()]", "correct": true, "exp": "La sintaxis banana-in-a-box combina property + event binding: [(ngModel)]." },
+      { "text": "()", "correct": false },
+      { "text": "[]", "correct": false },
+      { "text": "{{ }}", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which decorator is used to emit events from a child component?",
+    "options": [
+      { "text": "@Output", "correct": true, "exp": "@Output permite enviar eventos o datos hacia el componente padre." },
+      { "text": "@Input", "correct": false },
+      { "text": "@Event", "correct": false },
+      { "text": "@Emit", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which binding listens for user input like click events?",
+    "options": [
+      { "text": "Event binding", "correct": true, "exp": "Event binding se realiza con (): (click)=\"handler()\"." },
+      { "text": "Property binding", "correct": false },
+      { "text": "Interpolation", "correct": false },
+      { "text": "Two-way binding", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "A component's HTML view is defined in which property?",
+    "options": [
+      { "text": "template or templateUrl", "correct": true, "exp": "template define HTML inline y templateUrl carga un archivo externo." },
+      { "text": "view", "correct": false },
+      { "text": "render", "correct": false },
+      { "text": "selector", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Signals are meant to replace:",
+    "options": [
+      { "text": "Zone-based change detection", "correct": true, "exp": "Signals permiten reactividad sin depender de zonas ni recorrer todo el árbol de componentes." },
+      { "text": "TypeScript classes", "correct": false },
+      { "text": "HTML interpolation", "correct": false },
+      { "text": "NgModules entirely", "correct": false }
+    ],
+    "level": "advanced"
+  },
+  {
+    "q": "Which method updates a signal based on its previous value?",
+    "options": [
+      { "text": "update()", "correct": true, "exp": "update(fn) recibe el valor anterior y retorna el nuevo." },
+      { "text": "set()", "correct": false },
+      { "text": "next()", "correct": false },
+      { "text": "emit()", "correct": false }
     ],
     "level": "intermediate"
   },
   {
-    "q": "How can you reuse form validation logic across multiple forms?",
+    "q": "Which TypeScript feature helps detect incorrect property access during development?",
     "options": [
-      {
-        "text": "Create custom ValidatorFn functions",
-        "correct": true,
-        "exp": "Funciones ValidatorFn pueden compartirse entre formularios."
-      },
-      {
-        "text": "Use @ReusableValidator()",
-        "correct": false
-      },
-      {
-        "text": "GlobalValidators",
-        "correct": false
-      },
-      {
-        "text": "SharedFormsModule only",
-        "correct": false
-      }
+      { "text": "Type checking", "correct": true, "exp": "El tipado estático evita errores comunes en tiempo de compilación." },
+      { "text": "Prototyping", "correct": false },
+      { "text": "Coercion", "correct": false },
+      { "text": "Polyfills", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Which TypeScript keyword defines a variable whose value cannot change?",
+    "options": [
+      { "text": "const", "correct": true, "exp": "const define valores inmutables después de su asignación inicial." },
+      { "text": "let", "correct": false },
+      { "text": "var", "correct": false },
+      { "text": "readonly", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "How do you declare a typed array in TypeScript?",
+    "options": [
+      { "text": "let list: number[] = [];", "correct": true, "exp": "number[] especifica que el arreglo solo contendrá números." },
+      { "text": "let list = array<number>;", "correct": false },
+      { "text": "let list = []: number;", "correct": false },
+      { "text": "number list[];", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Where should a service typically be provided to be available application-wide?",
+    "options": [
+      { "text": "In the root injector", "correct": true, "exp": "Usar @Injectable({ providedIn: 'root' }) hace el servicio global." },
+      { "text": "In every component", "correct": false },
+      { "text": "In index.html", "correct": false },
+      { "text": "In polyfills.ts", "correct": false }
     ],
     "level": "intermediate"
   },
   {
-    "q": "Which Angular API helps manage multiple outlets in routing?",
+    "q": "Attribute directives mainly:",
     "options": [
-      {
-        "text": "Named RouterOutlets",
-        "correct": true,
-        "exp": "Permite mostrar múltiples rutas en distintas áreas de la plantilla."
-      },
-      {
-        "text": "MultiRouter",
-        "correct": false
-      },
-      {
-        "text": "OutletManager",
-        "correct": false
-      },
-      {
-        "text": "RouterZones",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What does the async pipe return when the observable has not emitted yet?",
-    "options": [
-      {
-        "text": "null",
-        "correct": true,
-        "exp": "Devuelve null hasta que se emite el primer valor."
-      },
-      {
-        "text": "undefined",
-        "correct": false
-      },
-      {
-        "text": "empty string",
-        "correct": false
-      },
-      {
-        "text": "false",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which decorator lets you create a directive that listens to host events?",
-    "options": [
-      {
-        "text": "@HostListener()",
-        "correct": true,
-        "exp": "Permite manejar eventos del elemento host."
-      },
-      {
-        "text": "@EventHost()",
-        "correct": false
-      },
-      {
-        "text": "@Listen()",
-        "correct": false
-      },
-      {
-        "text": "@OnEvent()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you detach change detection for a component?",
-    "options": [
-      {
-        "text": "ChangeDetectorRef.detach()",
-        "correct": true,
-        "exp": "Detiene la detección automática de cambios."
-      },
-      {
-        "text": "NgZone.detach()",
-        "correct": false
-      },
-      {
-        "text": "ChangeDetectorRef.off()",
-        "correct": false
-      },
-      {
-        "text": "ViewRef.stop()",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which operator combines the latest value from the source and another observable on emission?",
-    "options": [
-      {
-        "text": "withLatestFrom",
-        "correct": true,
-        "exp": "Combina el valor actual con el más reciente de otro observable."
-      },
-      {
-        "text": "combineLatest",
-        "correct": false
-      },
-      {
-        "text": "zip",
-        "correct": false
-      },
-      {
-        "text": "join",
-        "correct": false
-      }
+      { "text": "Change appearance or behavior of elements", "correct": true, "exp": "Ej: ngClass y ngStyle modifican atributos visuales sin crear/remover elementos." },
+      { "text": "Add or remove elements", "correct": false },
+      { "text": "Define new routes", "correct": false },
+      { "text": "Compile templates", "correct": false }
     ],
     "level": "intermediate"
   },
   {
-    "q": "Which Angular directive conditionally adds or removes a template from the DOM?",
+    "q": "Structural directives mainly:",
     "options": [
-      {
-        "text": "*ngIf",
-        "correct": true,
-        "exp": "Renderiza o elimina el elemento según una condición."
-      },
-      {
-        "text": "[hidden]",
-        "correct": false
-      },
-      {
-        "text": "*ngFor",
-        "correct": false
-      },
-      {
-        "text": "*ngSwitch",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "How do you observe route parameter changes over time?",
-    "options": [
-      {
-        "text": "ActivatedRoute.paramMap",
-        "correct": true,
-        "exp": "Es un observable que emite en cada cambio de parámetro."
-      },
-      {
-        "text": "Router.params()",
-        "correct": false
-      },
-      {
-        "text": "RouteObserver",
-        "correct": false
-      },
-      {
-        "text": "watchParams()",
-        "correct": false
-      }
+      { "text": "Add or remove elements in the DOM", "correct": true, "exp": "*ngIf, *ngFor alteran la estructura del DOM." },
+      { "text": "Apply CSS styles", "correct": false },
+      { "text": "Listen for user events", "correct": false },
+      { "text": "Inject services", "correct": false }
     ],
     "level": "intermediate"
   },
   {
-    "q": "Which Angular service allows dynamic component instantiation in a view?",
+    "q": "Which directive switches templates based on matching conditions?",
     "options": [
-      {
-        "text": "ComponentFactoryResolver",
-        "correct": true,
-        "exp": "Resuelve fábricas de componentes para creación dinámica."
-      },
-      {
-        "text": "DynamicLoader",
-        "correct": false
-      },
-      {
-        "text": "ViewService",
-        "correct": false
-      },
-      {
-        "text": "TemplateFactory",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "What command lists outdated npm packages in an Angular project?",
-    "options": [
-      {
-        "text": "npm outdated",
-        "correct": true,
-        "exp": "Muestra las dependencias que tienen versiones más recientes."
-      },
-      {
-        "text": "ng outdated",
-        "correct": false
-      },
-      {
-        "text": "npm check",
-        "correct": false
-      },
-      {
-        "text": "ng list outdated",
-        "correct": false
-      }
-    ],
-    "level": "basic"
-  },
-  {
-    "q": "Which operator ignores emissions for a duration after emitting a value?",
-    "options": [
-      {
-        "text": "throttleTime",
-        "correct": true,
-        "exp": "Emite el primer valor y luego ignora el resto durante el tiempo especificado."
-      },
-      {
-        "text": "debounceTime",
-        "correct": false
-      },
-      {
-        "text": "sampleTime",
-        "correct": false
-      },
-      {
-        "text": "delayWhen",
-        "correct": false
-      }
+      { "text": "*ngSwitchCase", "correct": true, "exp": "*ngSwitchCase se usa junto con ngSwitch para mostrar contenido condicional." },
+      { "text": "*ngIf", "correct": false },
+      { "text": "*ngFor", "correct": false },
+      { "text": "ngTemplate", "correct": false }
     ],
     "level": "intermediate"
   },
   {
-    "q": "How do you configure global date locale for Angular Material components?",
+    "q": "The DatePipe allows formatting dates by using:",
     "options": [
-      {
-        "text": "Provide MAT_DATE_LOCALE token",
-        "correct": true,
-        "exp": "Configura el idioma para los componentes de fecha."
-      },
-      {
-        "text": "Use LOCALE_ID only",
-        "correct": false
-      },
-      {
-        "text": "Set in angular.json",
-        "correct": false
-      },
-      {
-        "text": "MAT_LOCALE_ID",
-        "correct": false
-      }
+      { "text": "'date' : 'formatString'", "correct": true, "exp": "Ej: {{ today | date:'dd/MM/yyyy' }}." },
+      { "text": "'date-format'", "correct": false },
+      { "text": "format(date)", "correct": false },
+      { "text": "dateFilter()", "correct": false }
     ],
     "level": "basic"
   },
   {
-    "q": "Which Angular feature allows injection of platform-specific implementations?",
+    "q": "In template-driven forms, form controls are mainly created using:",
     "options": [
-      {
-        "text": "InjectionToken with different providers per platform",
-        "correct": true,
-        "exp": "Permite registrar distintos providers según la plataforma."
-      },
-      {
-        "text": "PlatformSwitch()",
-        "correct": false
-      },
-      {
-        "text": "AppPlatformService",
-        "correct": false
-      },
-      {
-        "text": "EnvInjector",
-        "correct": false
-      }
+      { "text": "ngModel", "correct": true, "exp": "ngModel conecta el formulario HTML con el modelo de datos." },
+      { "text": "FormControl", "correct": false },
+      { "text": "FormGroup", "correct": false },
+      { "text": "ReactiveFormBuilder", "correct": false }
+    ],
+    "level": "basic"
+  },
+  {
+    "q": "Reactive forms rely on:",
+    "options": [
+      { "text": "Explicitly created form control objects", "correct": true, "exp": "Se definen mediante FormControl, FormGroup y FormArray." },
+      { "text": "HTML attributes alone", "correct": false },
+      { "text": "Implicit template parsing", "correct": false },
+      { "text": "Two-way binding only", "correct": false }
+    ],
+    "level": "intermediate"
+  },
+  {
+    "q": "AbstractControl represents:",
+    "options": [
+      { "text": "The base class for all form controls", "correct": true, "exp": "FormControl, FormGroup y FormArray extienden AbstractControl." },
+      { "text": "Validator functions only", "correct": false },
+      { "text": "A service manager", "correct": false },
+      { "text": "A DOM element wrapper", "correct": false }
+    ],
+    "level": "advanced"
+  },
+  {
+    "q": "Which class manages grouped form controls?",
+    "options": [
+      { "text": "FormGroup", "correct": true, "exp": "FormGroup permite agrupar controles para validación conjunta." },
+      { "text": "FormList", "correct": false },
+      { "text": "ControlGroup", "correct": false },
+      { "text": "GroupControl", "correct": false }
+    ],
+    "level": "intermediate"
+  },
+  {
+    "q": "Which Angular module is necessary for using ngIf and ngFor?",
+    "options": [
+      { "text": "CommonModule", "correct": true, "exp": "CommonModule incluye directivas comunes como ngIf y ngFor." },
+      { "text": "BrowserModule", "correct": false },
+      { "text": "HttpClientModule", "correct": false },
+      { "text": "RouterModule", "correct": false }
+    ],
+    "level": "intermediate"
+  },
+  {
+    "q": "What is the main purpose of RouterModule?",
+    "options": [
+      { "text": "Enable navigation between components", "correct": true, "exp": "RouterModule gestiona rutas, navegación y carga de vistas." },
+      { "text": "Style application layouts", "correct": false },
+      { "text": "Handle HTTP requests", "correct": false },
+      { "text": "Render forms", "correct": false }
     ],
     "level": "intermediate"
   }
