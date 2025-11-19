@@ -1,277 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angular Junior Practice Exam – 2025</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Angular Junior Practice Exam – Pro Landing</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --primary:#007bff;
-    --primary-dark:#0056b3;
-    --correct:#28a745;
-    --incorrect:#dc3545;
-  }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg,#74b9ff,#a29bfe);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+/* ----------------------------------------------------
+   BASE + THEME VARIABLES
+---------------------------------------------------- */
+:root{
+  --primary: #0652DD;
+  --primary-600: #0b63d6;
+  --muted: #6b7280;
+  --bg: linear-gradient(180deg,#f7f7fb,#eef2ff);
+  --bg-fixed: linear-gradient(180deg,#f7f7fb,#eef2ff);
+  --card: #ffffff;
+  --card-contrast: #f8fafc;
+  --border: #e6e9ef;
+  --text: #0f172a;
+  --success: #16a34a;
+  --danger: #ef4444;
 
-  h1 { text-align: center; }
-  .hidden { display: none; }
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(16,24,40,0.06);
 
-  /* ===== Pantalla de inicio ===== */
-  #startScreen {
-    max-width: 700px;
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    text-align: center;
-    animation: fadeIn 1s ease-out;
-  }
-  #startScreen h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #007bff, #6a11cb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  #startScreen p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 25px;
-  }
-  #startScreen ul {
-    text-align: left;
-    margin: 0 auto 25px;
-    max-width: 500px;
-    color: #555;
-    line-height: 1.6;
-    padding-left: 20px;
-  }
-  
-  #startScreen button {
-    background: var(--primary);
-    color: #fff;
-    padding: 14px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    margin-bottom: 12px;
-    width: 100%;
-  }
-  #startScreen button:hover {
-    background: var(--primary-dark);
-    transform: scale(1.05);
-  }
+  /* BUTTONS */
+  --btn-bg: var(--primary);
+  --btn-color: #fff;
+  --btn-shadow: 0 6px 18px rgba(11,99,214,0.18);
+  --ghost-bg: rgba(11,17,34,0.04);
+  --ghost-color: #0b1220;
 
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
+  /* explanation color */
+  --exp-color: #0EA5E9;
+}
 
-  /* ===== BLOQUES DE CÓDIGO ===== */
-  .code-block {
-    background: #1e1e1e;
-    color: #dcdcdc;
-    padding: 12px 14px;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 12px 0;
-    font-family: Consolas, 'Courier New', monospace;
-    font-size: 0.95rem;
-    border-left: 4px solid #6a11cb;
-  }
-  .code-block code {
-    white-space: pre;
-    display: block;
-  }
+[data-theme="dark"]{
+  --primary: #60a5fa;
+  --primary-600: #3b82f6;
+  --muted: #94a3b8;
+  --bg: linear-gradient(180deg,#071029,#041028 60%);
+  --bg-fixed: linear-gradient(180deg,#071029,#041028 60%);
+  --card: #0b1724;
+  --card-contrast: #071826;
+  --border: #14202b;
+  --text: #e6eef8;
 
-  /* ===== Preguntas ===== */
-  .question {
-    margin-bottom: 20px;
-    padding: 12px;
-    background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .question label {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 8px 10px;
-    margin: 6px 0;
-    cursor: pointer;
-    line-height: 1.4;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: #fdfdfd;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  --success: #22c55e;
+  --danger: #f43f5e;
 
-  .question label input { margin-top: 2px; }
+  --shadow: 0 8px 30px rgba(2,6,23,0.6);
 
-  .correct { color: var(--correct); font-weight: bold; }
-  .incorrect { color: var(--incorrect); font-weight: bold; }
+  --btn-bg: linear-gradient(135deg,#0b63d6,#3b82f6);
+  --btn-color: #071026;
+  --btn-shadow: 0 8px 24px rgba(59,130,246,0.12);
 
-  .explanation {
-    margin-top: 6px;
-    font-style: italic;
-    color: var(--correct);
-  }
+  --ghost-bg: rgba(255,255,255,0.04);
+  --ghost-color: #d6deff;
 
-  /* ===== Controles ===== */
-  #controls {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  #controls button {
-    background: var(--primary);
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    min-width: 120px;
-    max-width: 100%;
-    flex: 1 1 auto;
-  }
-  #controls button:hover { background: var(--primary-dark); }
+  --exp-color: #5ac8fa;
+}
 
-  #timer {
-    font-weight: bold;
-    font-size: 1.2em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--incorrect);
-  }
+/* ----------------------------------------------------
+   GLOBAL
+---------------------------------------------------- */
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg-fixed);
+  background-attachment: fixed;
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  color: var(--text);
+}
 
-  /* ===== Pantalla de resultados ===== */
-  #resultScreen {
-    max-width: 900px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    animation: fadeIn 0.8s ease-out;
-  }
-  #resultScreen h2 {
-    text-align: center;
-    color: var(--primary-dark);
-    margin-top: 0;
-    border-bottom: 1px solid #e1e1e1;
-    padding-bottom: 10px;
-  }
-  #resultScreen .score {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-dark);
-    margin: 20px 0;
-  }
-  #resultScreen .wrong-list { list-style: none; padding-left: 0; }
-  #resultScreen .wrong-item {
-    margin-bottom: 18px;
-    background: #f8f9fa;
-    border-left: 6px solid var(--incorrect);
-    padding: 12px 14px;
-    border-radius: 6px;
-  }
-  #resultScreen .wrong-item h3 {
-    margin: 0 0 6px;
-    font-size: 1rem;
-    color: #333;
-  }
-  #resultScreen .your-answer { color: var(--incorrect); margin: 0; }
-  #resultScreen .correct-answer { color: var(--correct); margin: 0; }
+.wrap{
+  max-width:1100px;
+  margin:28px auto;
+  padding:20px;
+}
 
-  .level {
-    font-size: 0.9em;
-    font-weight: bold;
-    background: #e9ecef;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 8px;
-    display: inline-block;
-  }
-  .level.basic { color: var(--correct); }
-  .level.intermediate { color: #ffc107; }
-  .level.advanced { color: var(--incorrect); }
+/* ----------------------------------------------------
+   TOPBAR
+---------------------------------------------------- */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+.brand{display:flex;gap:12px;align-items:center;}
 
-  #practiceInfo {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
+.logo{
+  width:44px;height:44px;border-radius:10px;
+  background: linear-gradient(135deg,var(--primary),var(--primary-600));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:700;font-size:18px;
+  box-shadow: var(--shadow);
+}
+
+.controls{display:flex;gap:10px;align-items:center;}
+
+.title{font-size:1.05rem;font-weight:700;}
+.subtitle{font-size:0.9rem;color:var(--muted);}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
+button{
+  font-family:inherit;
+  font-weight:600;
+  border-radius:10px;
+  border:none;
+  padding:10px 14px;
+  cursor:pointer;
+  box-shadow: var(--btn-shadow);
+  transition:0.15s;
+}
+button:active{
+  transform:scale(.97);
+}
+.primary{background:var(--btn-bg); color:var(--btn-color);}
+.ghost{
+  background:var(--ghost-bg);
+  color:var(--ghost-color);
+  border:1px solid var(--border);
+  box-shadow:none;
+}
+
+/* ----------------------------------------------------
+   HOME / HERO
+---------------------------------------------------- */
+.hero{
+  margin-top:6px;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:18px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:18px;
+}
+
+/* ----------------------------------------------------
+   QUIZ
+---------------------------------------------------- */
+#quizScreen.hidden{display:none}
+#startScreen.hidden{display:none}
+#resultScreen.hidden{display:none}
+
+#breadcrumb,
+#practiceCounter{
+  text-align:center;
+  margin-bottom:12px;
+  color:var(--muted);
+}
+
+.question{
+  margin-bottom:32px;
+  padding:24px;
+  background:var(--card);
+  border-radius:12px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.question p{
+  margin:0 0 12px 0;
+  font-weight:700;
+}
+
+/* LEVEL TAGS */
+.level{
+  padding:4px 8px;
+  border-radius:8px;
+  margin-left:8px;
+  font-weight:700;
+  font-size:0.8rem;
+  background:var(--card-contrast);
+}
+.level.basic{color:var(--success);}
+.level.intermediate{color:#f59e0b;}
+.level.advanced{color:var(--danger);}
+
+/* OPTIONS */
+label.option{
+  display:block;
+  padding:14px;
+  border-radius:10px;
+  margin-top:10px;
+  background:linear-gradient(180deg,var(--card),var(--card-contrast));
+  border:1px solid var(--border);
+  cursor:pointer;
+  transition:0.2s;
+  position:relative;
+}
+
+label.option:hover{
+  border-color:var(--primary);
+}
+
+/* RADIO FIX - MAKES BLUE DOT ALWAYS VISIBLE */
+label.option input[type="radio"]{
+  transform:scale(1.2);
+  margin-right:10px;
+  accent-color:var(--primary);
+}
+
+/* SELECTED */
+label.option.selected{
+  border-color: var(--primary);
+  background: rgba(11,99,214,0.08);
+  box-shadow:0 0 0 2px rgba(11,99,214,0.15);
+}
+
+/* CORRECT / INCORRECT */
+label.option.correct{
+  background:rgba(34,197,94,0.12);
+  border-color:var(--success);
+}
+label.option.incorrect{
+  background:rgba(239,68,68,0.12);
+  border-color:var(--danger);
+}
+
+/* CODE BLOCK */
+.code-block{
+  background:#0b1220;
+  color:#d6deff;
+  padding:14px;
+  border-radius:8px;
+  margin:16px 0;
+  border-left:4px solid var(--primary);
+  overflow-x:auto;
+}
+.code-block code{
+  white-space:pre !important;
+  font-family:Consolas,monospace;
+  line-height:1.4;
+}
+
+/* EXPLANATION */
+.explanation{
+  margin-top:12px;
+  font-style:italic;
+  color:var(--exp-color);
+  font-weight:600;
+}
+
+/* CONTROLS */
+#controls{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-top:30px;
+}
+
+/* COUNTDOWN */
+#countdownOverlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(2,6,23,0.55);
+  z-index:9999;
+  color:white;
+  font-weight:800;
+  font-size:6rem;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease;
+}
+#countdownOverlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* RESULTS */
+#resultScreen{
+  padding:20px;
+}
+#resultContent{
+  background:var(--card);
+  padding:24px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.score{
+  font-weight:700;
+  text-align:center;
+  font-size:1.2rem;
+}
+
+@media(max-width:980px){
+  .hero{
+    grid-template-columns:1fr;
   }
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:600px){
+  .features{grid-template-columns:1fr;}
+  #countdownOverlay{font-size:4rem;}
+}
 </style>
 </head>
 
 <body>
+<div class="wrap">
 
-<!-- 🟩 Pantalla de inicio -->
-<div id="startScreen">
-  <h1>Angular Junior Practice Exam – 2025</h1>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">AJ</div>
+      <div>
+        <div class="title">Angular Junior Practice</div>
+        <div class="subtitle">Simulador profesional — prepárate para certificar</div>
+      </div>
+    </div>
 
-  <p>
-    Bienvenido al <strong>Simulador Oficial</strong> para la certificación Angular 2025.<br>
-    Pon a prueba tus conocimientos de Angular 17+, RxJS 7+, TypeScript y buenas prácticas.
-  </p>
-
-  <ul>
-    <li>⏱ <strong>Examen:</strong> 40 minutos</li>
-    <li>📝 <strong>Examen:</strong> 50 preguntas aleatorias</li>
-    <li>📚 <strong>Práctica:</strong> Todas las preguntas, sin tiempo</li>
-  </ul>
-
-  <!-- BOTONES -->
-  <button onclick="startExam()">🚀 Comenzar Examen</button>
-  <button onclick="startPractice()">📘 Modo Práctica (Todas las preguntas)</button>
-</div>
-
-<!-- 🟦 Pantalla del examen/práctica -->
-<div id="quizScreen" class="hidden">
-  <h1>Angular Junior Practice Exam – 2025</h1>
-
-  <div id="timer">Time Remaining: 40:00</div>
-
-  <div id="practiceInfo" class="hidden"></div>
-
-  <form id="quizForm"></form>
-
-  <div id="controls">
-    <button type="button" id="prevBtn" onclick="prevPage()">Prev</button>
-    <button type="button" id="nextBtn" onclick="nextPage()">Next</button>
+    <div class="controls">
+      <div id="themeIndicator">Tema: <strong id="currentTheme">Claro</strong></div>
+      <button id="themeToggle">🌗 Tema</button>
+    </div>
   </div>
-</div>
 
-<!-- 🟥 Pantalla de resultados -->
-<div id="resultScreen" class="hidden">
-  <div id="resultContent"></div>
-</div>
+  <!-- START SCREEN -->
+  <div id="startScreen">
+
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div class="card" style="padding:28px">
+        <h1>Prepárate para la certificación Angular</h1>
+        <p>Exámenes reales, niveles, explicaciones y práctica continua.</p>
+
+        <div class="cta" style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
+          <button class="primary" onclick="startExam()">🚀 Comenzar examen</button>
+          <button class="ghost" onclick="startPractice()">📘 Modo práctica</button>
+        </div>
+
+        <div style="margin-top:18px;color:var(--muted)">
+          <strong>Tiempo examen:</strong> 40 min · <strong>Preguntas:</strong> 50
+        </div>
+
+        <div class="features" style="margin-top:20px">
+          <div class="card"><h3>Preguntas aleatorias</h3><p>Simula un examen real.</p></div>
+          <div class="card"><h3>Modo práctica</h3><p>Repasa libremente.</p></div>
+          <div class="card"><h3>Explicaciones</h3><p>Aprende el porqué.</p></div>
+        </div>
+      </div>
+
+      <!-- RIGHT / ESTADO -->
+      <div class="card" style="padding:22px">
+        <div style="font-weight:700">Estado</div>
+
+        <div style="margin-top:14px; display:flex; flex-direction:column; gap:10px;">
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Total preguntas</div><div id="globalCount">—</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Última sesión</div><div id="lastScore">—</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Exámenes realizados</div><div id="examCount">0</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Mejor puntuación</div><div id="bestScore">—</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Peor puntuación</div><div id="worstScore">—</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Aciertos totales</div><div id="totalCorrect">0</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;">
+            <div>Media general</div><div id="avgPercent">—</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- hero -->
+  </div><!-- startScreen -->
+
+
+  <!-- QUIZ SCREEN -->
+  <div id="quizScreen" class="hidden">
+
+    <button id="backBtn" class="ghost" style="margin-bottom:10px">← Volver</button>
+
+    <div id="breadcrumb"></div>
+    <div id="practiceCounter"></div>
+    <div id="timer" style="text-align:center;font-weight:700;color:var(--danger); margin-bottom:12px"></div>
+
+    <div id="quizContainer">
+      <form id="quizForm"></form>
+    </div>
+
+    <div id="controls">
+      <button class="ghost" id="prevBtn" onclick="prevPage()">Prev</button>
+      <button class="primary" id="nextBtn" onclick="nextPage()">Next</button>
+    </div>
+
+  </div><!-- quizScreen -->
+
+
+  <!-- RESULTS -->
+  <div id="resultScreen" class="hidden">
+
+    <!-- TOP RETURN BUTTON -->
+    <button class="ghost" onclick="location.reload()" style="margin-bottom:16px">← Volver al inicio</button>
+
+    <div id="resultContent"></div>
+
+    <!-- BOTTOM RETURN BUTTON -->
+    <div style="text-align:center; margin-top:18px;">
+      <button class="primary" onclick="location.reload()">Volver al inicio</button>
+    </div>
+
+  </div><!-- resultScreen -->
+
+</div><!-- wrap -->
+
+<!-- COUNTDOWN -->
+<div id="countdownOverlay"></div>
 
 <script src="app.js"></script>
 </body>
