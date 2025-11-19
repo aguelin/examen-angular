@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Angular Junior Practice Exam – 2025</title>
+
 <style>
   :root {
     --primary:#007bff;
@@ -58,6 +59,7 @@
     line-height: 1.6;
     padding-left: 20px;
   }
+  
   #startScreen button {
     background: var(--primary);
     color: #fff;
@@ -68,6 +70,8 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-bottom: 12px;
+    width: 100%;
   }
   #startScreen button:hover {
     background: var(--primary-dark);
@@ -77,6 +81,23 @@
   @keyframes fadeIn {
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* ===== BLOQUES DE CÓDIGO ===== */
+  .code-block {
+    background: #1e1e1e;
+    color: #dcdcdc;
+    padding: 12px 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 12px 0;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.95rem;
+    border-left: 4px solid #6a11cb;
+  }
+  .code-block code {
+    white-space: pre;
+    display: block;
   }
 
   /* ===== Preguntas ===== */
@@ -103,6 +124,7 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .question label input { margin-top: 2px; }
 
   .correct { color: var(--correct); font-weight: bold; }
@@ -135,7 +157,6 @@
     min-width: 120px;
     max-width: 100%;
     flex: 1 1 auto;
-    white-space: normal;
   }
   #controls button:hover { background: var(--primary-dark); }
 
@@ -170,13 +191,7 @@
     color: var(--primary-dark);
     margin: 20px 0;
   }
-  #resultScreen .level-scores p {
-    margin: 4px 0;
-  }
-  #resultScreen .wrong-list {
-    list-style: none;
-    padding-left: 0;
-  }
+  #resultScreen .wrong-list { list-style: none; padding-left: 0; }
   #resultScreen .wrong-item {
     margin-bottom: 18px;
     background: #f8f9fa;
@@ -205,49 +220,55 @@
   .level.intermediate { color: #ffc107; }
   .level.advanced { color: var(--incorrect); }
 
-  @media (max-width: 768px) {
-    body { padding: 12px; font-size: 16px; }
-    h1 { font-size: 1.5rem; }
-  }
-  @media (max-width: 480px) {
-    body { padding: 8px; font-size: 15px; }
-    h1 { font-size: 1.3rem; }
-    .question { padding: 10px; }
-    #controls { flex-direction: column; gap: 10px; align-items: stretch; }
-    #controls button { width: 100%; font-size: 1rem; }
+  #practiceInfo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
   }
 </style>
 </head>
+
 <body>
 
-<!-- Pantalla de inicio -->
+<!-- 🟩 Pantalla de inicio -->
 <div id="startScreen">
   <h1>Angular Junior Practice Exam – 2025</h1>
+
   <p>
-    Bienvenido al <strong>Simulador Oficial</strong> para la certificación Angular 2025.
-    Pon a prueba tus conocimientos de <strong>Angular 17+</strong>, RxJS 7+, TypeScript
-    y las últimas prácticas recomendadas.
+    Bienvenido al <strong>Simulador Oficial</strong> para la certificación Angular 2025.<br>
+    Pon a prueba tus conocimientos de Angular 17+, RxJS 7+, TypeScript y buenas prácticas.
   </p>
+
   <ul>
-    <li>⏱ <strong>Duración:</strong> 40 minutos</li>
-    <li>📝 <strong>Preguntas:</strong> 50 aleatorias de un gran banco</li>
-    <li>📊 <strong>Resultados:</strong> puntuación total y por nivel</li>
+    <li>⏱ <strong>Examen:</strong> 40 minutos</li>
+    <li>📝 <strong>Examen:</strong> 50 preguntas aleatorias</li>
+    <li>📚 <strong>Práctica:</strong> Todas las preguntas, sin tiempo</li>
   </ul>
+
+  <!-- BOTONES -->
   <button onclick="startExam()">🚀 Comenzar Examen</button>
+  <button onclick="startPractice()">📘 Modo Práctica (Todas las preguntas)</button>
 </div>
 
-<!-- Pantalla del examen -->
+<!-- 🟦 Pantalla del examen/práctica -->
 <div id="quizScreen" class="hidden">
   <h1>Angular Junior Practice Exam – 2025</h1>
+
   <div id="timer">Time Remaining: 40:00</div>
+
+  <div id="practiceInfo" class="hidden"></div>
+
   <form id="quizForm"></form>
+
   <div id="controls">
     <button type="button" id="prevBtn" onclick="prevPage()">Prev</button>
     <button type="button" id="nextBtn" onclick="nextPage()">Next</button>
   </div>
 </div>
 
-<!-- Pantalla de resultados -->
+<!-- 🟥 Pantalla de resultados -->
 <div id="resultScreen" class="hidden">
   <div id="resultContent"></div>
 </div>
